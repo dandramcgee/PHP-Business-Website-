@@ -10,6 +10,7 @@ The `template-business-website` is a business website template created using PHP
 - **Navigation:** Easy and intuitive navigation system that helps users quickly find the information they need.
 - **Portfolio:** Dedicated section to showcase business services and products.
 - **Contact Form:** Convenient contact form for clients to reach out.
+- **Admin Panel:** A comprehensive admin panel that allows you to manage all website content easily. You can modify text, images, and other data without needing to edit the code directly.
 - **Website Theme:** Options to choose from multiple color schemes and templates.
 
 ### Technical Stack
@@ -21,8 +22,8 @@ The `template-business-website` is a business website template created using PHP
    - **JavaScript:** Interactive elements and dynamic features.
 
 2. **Backend Technologies:**
-   - PHP for server-side processing.
-   - Database interaction capabilities.
+   - **PHP** for server-side processing.
+   - **Database interaction** capabilities.
 
 ### Installation
 
@@ -47,10 +48,14 @@ To get started with this project, follow these steps:
 - **Multi-Purpose:** This template is suitable for various business fields, such as services, product sales, marketing, and more.
 - **Easy Customization:** Simple to modify through HTML and CSS, as well as adding server-side functions by editing PHP files.
 
+### Admin Panel
+
+- The admin panel is user-friendly and allows you to manage all aspects of your website. You can change text, update images, and manage your portfolio items seamlessly. This feature is designed for users who may not have coding experience but want to keep their website up-to-date easily.
+- ![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/images/admin_panel.png?raw=true) *(Add an appropriate image for the admin panel here)*
+
 ## Contributing
 
 Contributions are welcome! If you have suggestions or want to enhance the project, feel free to fork the repository and submit a pull request.
-
 
 ## Connect with Me
 
@@ -101,3 +106,7 @@ I love connecting with new people and exploring new opportunities. Feel free to 
         </td>
     </tr>
 </table>
+
+---
+
+Feel free to let me know if you want any further modifications or additions! 😊
