@@ -52,8 +52,8 @@ To get started with this project, follow these steps:
 ### Admin Panel
 
 - The admin panel is user-friendly and allows you to manage all aspects of your website. You can change text, update images, and manage your portfolio items seamlessly. This feature is designed for users who may not have coding experience but want to keep their website up-to-date easily.
-![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-1.png)
-![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-2.png)
+[Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-1.png)
+[Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-2.png)
 ### Technologies Used
 
 <div style="display: flex; flex-wrap: wrap; gap: 5px;">
