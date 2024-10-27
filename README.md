@@ -12,6 +12,11 @@ The admin panel is user-friendly and allows you to manage all aspects of your we
 ![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-1.png)
 ![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-2.png)
 
+### Admin Panel Features:
+- Content Management: Easily update text, images, and other site elements.
+- Portfolio Management: Add or remove services and products to showcase.
+- User Management: Manage user accounts and access levels for your team.
+
 ### Project Characteristics
 
 - **Multi-Purpose:** This template is suitable for various business fields, such as services, product sales, marketing, and more.
