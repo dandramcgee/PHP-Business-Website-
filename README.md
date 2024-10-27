@@ -1,5 +1,3 @@
-Sure, Iqbolshoh! Here’s the information about the `template-business-website` project in English:
-
 # Template Business Website
 
 The `template-business-website` is a business website template created using PHP and HTML/CSS. This project is designed for various businesses, providing a modern and professional online presence. The template is highly customizable, allowing users to adapt its design and features according to their needs.
