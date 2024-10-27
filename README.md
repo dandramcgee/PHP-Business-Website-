@@ -5,6 +5,18 @@ The `template-business-website` is a business website template created using PHP
 ![Business Website Banner](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/banner-1.png)
 ![Business Website Banner](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/banner-2.png)
 
+### Admin Panel
+
+- The admin panel is user-friendly and allows you to manage all aspects of your website. You can change text, update images, and manage your portfolio items seamlessly. This feature is designed for users who may not have coding experience but want to keep their website up-to-date easily.
+
+![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-1.png)
+![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-2.png)
+
+### Project Characteristics
+
+- **Multi-Purpose:** This template is suitable for various business fields, such as services, product sales, marketing, and more.
+- **Easy Customization:** Simple to modify through HTML and CSS, as well as adding server-side functions by editing PHP files.
+
 ### Key Features
 
 - **Modern Design:** Responsive design that looks great on both mobile and desktop devices.
@@ -43,18 +55,6 @@ To get started with this project, follow these steps:
 3. **Set Up the Website:**
    - Host it on a server that supports PHP (like Apache or Nginx).
    - Open `http://localhost/template-business-website` in your browser.
-
-### Project Characteristics
-
-- **Multi-Purpose:** This template is suitable for various business fields, such as services, product sales, marketing, and more.
-- **Easy Customization:** Simple to modify through HTML and CSS, as well as adding server-side functions by editing PHP files.
-
-### Admin Panel
-
-- The admin panel is user-friendly and allows you to manage all aspects of your website. You can change text, update images, and manage your portfolio items seamlessly. This feature is designed for users who may not have coding experience but want to keep their website up-to-date easily.
-
-![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-1.png)
-![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-2.png)
 
 ### Technologies Used
 
