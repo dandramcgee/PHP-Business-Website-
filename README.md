@@ -7,7 +7,7 @@ The `template-business-website` is a business website template created using PHP
 
 ### Admin Panel
 
-- The admin panel is user-friendly and allows you to manage all aspects of your website. You can change text, update images, and manage your portfolio items seamlessly. This feature is designed for users who may not have coding experience but want to keep their website up-to-date easily.
+The admin panel is user-friendly and allows you to manage all aspects of your website. You can change text, update images, and manage your portfolio items seamlessly. This feature is designed for users who may not have coding experience but want to keep their website up-to-date easily.
 
 ![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-1.png)
 ![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-2.png)
@@ -15,7 +15,6 @@ The `template-business-website` is a business website template created using PHP
 ### Project Characteristics
 
 - **Multi-Purpose:** This template is suitable for various business fields, such as services, product sales, marketing, and more.
-- **Easy Customization:** Simple to modify through HTML and CSS, as well as adding server-side functions by editing PHP files.
 
 ### Key Features
 
@@ -49,7 +48,6 @@ The `template-business-website` is a business website template created using PHP
     <img src="https://img.shields.io/badge/PHP-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
     <img src="https://img.shields.io/badge/MySQL-%234479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
 </div>
-
 
 
 ### Installation
