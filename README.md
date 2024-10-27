@@ -35,7 +35,7 @@ The admin panel is user-friendly and allows you to manage all aspects of your we
 
 2. **Backend Technologies:**
    - **PHP** for server-side processing.
-   - **Database interaction** capabilities.
+   - **MySQL** Database.
 
 ### Technologies Used
 
