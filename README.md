@@ -25,18 +25,6 @@ The admin panel is user-friendly and allows you to manage all aspects of your we
 - **Admin Panel:** A comprehensive admin panel that allows you to manage all website content easily. You can modify text, images, and other data without needing to edit the code directly.
 - **Website Theme:** Options to choose from multiple color schemes and templates.
 
-### Technical Stack
-
-1. **Frontend Technologies:**
-   - **HTML5:** Structure for web pages.
-   - **CSS3:** Styling and design.
-   - **Bootstrap:** Framework for responsive design.
-   - **JavaScript:** Interactive elements and dynamic features.
-
-2. **Backend Technologies:**
-   - **PHP** for server-side processing.
-   - **MySQL** Database.
-
 ### Technologies Used
 
 <div style="display: flex; flex-wrap: wrap; gap: 5px;">
