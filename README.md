@@ -49,9 +49,14 @@ To get started with this project, follow these steps:
 - **Multi-Purpose:** This template is suitable for various business fields, such as services, product sales, marketing, and more.
 - **Easy Customization:** Simple to modify through HTML and CSS, as well as adding server-side functions by editing PHP files.
 
-### Contact Me
+## Contributing
 
-I’m always open to new ideas and collaborations. You can connect with me through my social media:
+Contributions are welcome! If you have suggestions or want to enhance the project, feel free to fork the repository and submit a pull request.
+
+
+## Connect with Me
+
+I love connecting with new people and exploring new opportunities. Feel free to reach out to me through any of the platforms below:
 
 <table>
     <tr>
@@ -76,7 +81,7 @@ I’m always open to new ideas and collaborations. You can connect with me throu
         <td>
             <a href="https://instagram.com/iqbolshoh_777" target="blank"><img align="center"
                     src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg"
-                    alt="Instagram" height="48" width="48" /></a>
+                    alt="instagram" height="48" width="48" /></a>
         </td>
         <td>
             <a href="https://wa.me/qr/22PVFQSMQQX4F1">
@@ -98,9 +103,3 @@ I’m always open to new ideas and collaborations. You can connect with me throu
         </td>
     </tr>
 </table>
-
-## My Thoughts
-
-This project can be very beneficial for businesses looking to establish a more effective online presence. By using this template, you can showcase your business and connect with new clients. If you have any questions or need further information, feel free to reach out!
-
-If you want to learn more about PHP, HTML/CSS, and other web development technologies, you can ask me any questions. We can discuss these topics in English or Russian! 😄🌟
