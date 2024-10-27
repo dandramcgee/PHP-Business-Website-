@@ -123,7 +123,3 @@ I love connecting with new people and exploring new opportunities. Feel free to 
         </td>
     </tr>
 </table>
-
----
-
-Feel free to let me know if you want any further modifications or additions! 😊
