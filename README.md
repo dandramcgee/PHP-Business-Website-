@@ -2,7 +2,8 @@
 
 The `template-business-website` is a business website template created using PHP and HTML/CSS. This project is designed for various businesses, providing a modern and professional online presence. The template is highly customizable, allowing users to adapt its design and features according to their needs.
 
-![Business Website Banner](https://github.com/Iqbolshoh/template-business-website/blob/main/images/banner.png?raw=true)
+![Business Website Banner](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/banner-1.png)
+![Business Website Banner](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/banner-2.png)
 
 ### Key Features
 
@@ -51,8 +52,8 @@ To get started with this project, follow these steps:
 ### Admin Panel
 
 - The admin panel is user-friendly and allows you to manage all aspects of your website. You can change text, update images, and manage your portfolio items seamlessly. This feature is designed for users who may not have coding experience but want to keep their website up-to-date easily.
-![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/images/admin_panel.png?raw=true)
-
+![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-1.png)
+![Admin Panel](https://github.com/Iqbolshoh/template-business-website/blob/main/assets/img/admin-panel-2.png)
 ### Technologies Used
 
 <div style="display: flex; flex-wrap: wrap; gap: 5px;">
