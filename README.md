@@ -63,7 +63,7 @@ To get started with this project, follow these steps:
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions or want to enhance the project, feel free to fork the repository and submit a pull request.
+Feel free to contribute by forking the repository and creating pull requests. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Connect with Me
 
