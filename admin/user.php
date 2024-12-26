@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           text: 'User information has been updated!',
           confirmButtonText: 'OK'
       }).then((result) => {
-          window.location.href = 'index.php';
+          window.location.href = './';
       });
   });
 </script>";
@@ -82,17 +82,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <div class="card-body">
                     <div class="form-group">
                       <label for="name">Full Name</label>
-                      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="<?php echo $user['name'] ?>" required>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name"
+                        value="<?php echo $user['name'] ?>" required>
                     </div>
 
                     <div class="form-group">
                       <label for="username">Username</label>
-                      <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" value="<?php echo $user['username'] ?>" required>
+                      <input type="text" class="form-control" id="username" name="username" placeholder="Enter username"
+                        value="<?php echo $user['username'] ?>" required>
                     </div>
 
                     <div class="form-group">
                       <label for="password">Password</label>
-                      <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                      <input type="password" class="form-control" id="password" name="password"
+                        placeholder="Enter password" required>
                     </div>
                   </div>
 

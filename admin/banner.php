@@ -46,7 +46,7 @@ if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $banner = $query->select('banners', '*', "WHERE id = {$id}")[0];
 
-    if ($banner) {
+    if (isset($banner[0])) {
         $imagePath = "../assets/img/banners/" . $banner['image'];
         // Delete the image file if it exists
         if (file_exists($imagePath)) {
