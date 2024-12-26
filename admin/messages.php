@@ -1,4 +1,5 @@
 <?php include 'check.php'; ?>
+
 <?php
 // Retrieve all messages
 $messages = $query->select('messages', '*');

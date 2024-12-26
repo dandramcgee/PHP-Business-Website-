@@ -3,9 +3,8 @@
 <?php
 $banners = $query->select('banners', '*');
 
-// Check if the request method is POST and the add button is pressed
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add'])) {
-    // Check if an image file has been uploaded
+    
     if (isset($_FILES['image']) && $_FILES['image']['name']) {
         $originalImage = $_FILES['image']['name'];
         $extension = pathinfo($originalImage, PATHINFO_EXTENSION);
@@ -14,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add'])) {
 
         $target = "../assets/img/banners/" . basename($newImageName);
 
-        // Move the uploaded file to the target directory
         if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
             $title = $_POST['title'];
             $description = $_POST['description'];
@@ -29,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add'])) {
                 'button_link' => $button_link
             ];
 
-            // Insert the banner data into the database
             $query->insert('banners', $data);
             header("Location: {$_SERVER['PHP_SELF']}");
             exit;
@@ -41,19 +38,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add'])) {
     }
 }
 
-// Check if delete is requested
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $banner = $query->select('banners', '*', "WHERE id = {$id}")[0];
 
     if (isset($banner[0])) {
         $imagePath = "../assets/img/banners/" . $banner['image'];
-        // Delete the image file if it exists
         if (file_exists($imagePath)) {
             unlink($imagePath);
         }
 
-        // Delete the banner record from the database
         $query->delete('banners', "WHERE id = {$id}");
         header("Location: {$_SERVER['PHP_SELF']}");
         exit;
@@ -101,12 +95,14 @@ if (isset($_GET['delete'])) {
 
                     <br>
                     <!-- Button to add banners -->
-                    <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#addBannerModal">
+                    <button type="button" class="btn btn-primary mb-3" data-toggle="modal"
+                        data-target="#addBannerModal">
                         Add Banner
                     </button>
 
                     <!-- Add Banner modal -->
-                    <div class="modal fade" id="addBannerModal" tabindex="-1" role="dialog" aria-labelledby="addBannerModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="addBannerModal" tabindex="-1" role="dialog"
+                        aria-labelledby="addBannerModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -119,27 +115,33 @@ if (isset($_GET['delete'])) {
                                     <div class="modal-body">
                                         <div class="form-group">
                                             <label for="image">Select Image</label>
-                                            <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+                                            <input type="file" class="form-control" id="image" name="image"
+                                                accept="image/*" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="title">Title</label>
-                                            <input type="text" class="form-control" id="title" name="title" placeholder="Title" maxlength="255" required>
+                                            <input type="text" class="form-control" id="title" name="title"
+                                                placeholder="Title" maxlength="255" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="description">Description</label>
-                                            <textarea class="form-control" id="description" name="description" placeholder="Description" required></textarea>
+                                            <textarea class="form-control" id="description" name="description"
+                                                placeholder="Description" required></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="button_text">Button Text</label>
-                                            <input type="text" class="form-control" id="button_text" name="button_text" placeholder="Button text" maxlength="100" required>
+                                            <input type="text" class="form-control" id="button_text" name="button_text"
+                                                placeholder="Button text" maxlength="100" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="button_link">Button Link</label>
-                                            <input type="text" class="form-control" id="button_link" name="button_link" placeholder="Button link" maxlength="255" required>
+                                            <input type="text" class="form-control" id="button_link" name="button_link"
+                                                placeholder="Button link" maxlength="255" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
                                         <button type="submit" name="add" class="btn btn-primary">Add</button>
                                     </div>
                                 </form>
@@ -167,13 +169,15 @@ if (isset($_GET['delete'])) {
                             <?php foreach ($banners as $index => $banner): ?>
                                 <tr>
                                     <td><?php echo $index + 1 ?></td>
-                                    <td><img src="../assets/img/banners/<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" width="100"></td>
+                                    <td><img src="../assets/img/banners/<?php echo $banner['image']; ?>"
+                                            alt="<?php echo $banner['title']; ?>" width="100"></td>
                                     <td><?php echo $banner['title']; ?></td>
                                     <td><?php echo $banner['description']; ?></td>
                                     <td><?php echo $banner['button_text']; ?></td>
                                     <td><?php echo $banner['button_link']; ?></td>
                                     <td>
-                                        <button onclick="deleteBanner(<?php echo $banner['id']; ?>)" type="button" class="btn btn-danger" onclick="deleteProduct(2)">Delete</button>
+                                        <button onclick="deleteBanner(<?php echo $banner['id']; ?>)" type="button"
+                                            class="btn btn-danger" onclick="deleteProduct(2)">Delete</button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -209,12 +213,12 @@ if (isset($_GET['delete'])) {
                             action: 'delete',
                             delete: id
                         },
-                        success: function(response) {
+                        success: function (response) {
                             Swal.fire("Deleted!", "Banner deleted successfully!", "success").then(() => {
                                 location.reload();
                             });
                         },
-                        error: function(xhr, status, error) {
+                        error: function (xhr, status, error) {
                             Swal.fire("Error!", "There was an error deleting the banner.", "error");
                         }
                     });

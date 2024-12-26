@@ -1,6 +1,7 @@
 <?php include 'check.php'; ?>
 
 <?php
+
 // Fetch contact information
 $contact = $query->select('contact', "*")[0];
 $contact_box = $query->select('contact_box', "*");
