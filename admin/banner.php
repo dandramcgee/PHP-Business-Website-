@@ -40,21 +40,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add'])) {
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
-    $banner = $query->select('banners', '*', "WHERE id = {$id}")[0];
+    $banner = $query->select('banners', '*', "WHERE id = {$id}");
 
     if (isset($banner[0])) {
+        $banner = $banner[0];
         $imagePath = "../assets/img/banners/" . $banner['image'];
+        
         if (file_exists($imagePath)) {
-            unlink($imagePath);
+            if (unlink($imagePath)) {
+                $query->delete('banners', "WHERE id = {$id}");
+                header("Location: {$_SERVER['PHP_SELF']}");
+                exit;
+            } else {
+                echo "An error occurred while deleting the image.";
+            }
+        } else {
+            echo "Image not found.";
         }
-
-        $query->delete('banners', "WHERE id = {$id}");
-        header("Location: {$_SERVER['PHP_SELF']}");
-        exit;
     } else {
-        echo "No banner found to delete.";
+        echo "Banner not found for deletion.";
     }
 }
+
 ?>
 
 <!DOCTYPE html>
