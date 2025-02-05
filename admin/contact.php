@@ -123,7 +123,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <div class='modal-content'>
                                             <div class='modal-header'>
                                                 <h5 class='modal-title' id='contactModalLabel-<?php echo $index; ?>'>Edit
-                                                    <?php echo ucfirst($social); ?></h5>
+                                                    <?php echo ucfirst($social); ?>
+                                                </h5>
                                                 <button type="button" class="close" data-bs-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -134,10 +135,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                 <form id='contactForm-<?php echo $index; ?>' action='' method='POST'>
                                                     <div class='form-group'>
                                                         <label
-                                                            for='<?php echo $social; ?>'><?php echo ucfirst($social); ?></label>
-                                                        <input type='text' name='<?php echo $social; ?>'
-                                                            id='<?php echo $social; ?>' class='form-control'
-                                                            value='<?php echo $socialLink; ?>' maxlength='255'>
+                                                            for='<?php echo htmlspecialchars($social, ENT_QUOTES, 'UTF-8'); ?>'>
+                                                            <?php echo ucfirst(htmlspecialchars($social, ENT_QUOTES, 'UTF-8')); ?>
+                                                        </label>
+                                                        <input type='text'
+                                                            name='<?php echo htmlspecialchars($social, ENT_QUOTES, 'UTF-8'); ?>'
+                                                            id='<?php echo htmlspecialchars($social, ENT_QUOTES, 'UTF-8'); ?>'
+                                                            class='form-control'
+                                                            value='<?php echo htmlspecialchars($socialLink, ENT_QUOTES, 'UTF-8'); ?>'
+                                                            maxlength='255'>
                                                     </div>
                                                     <button type='submit' class='btn btn-primary'>Save</button>
                                                 </form>
@@ -179,7 +185,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <div class='modal-content'>
                                             <div class='modal-header'>
                                                 <h5 class='modal-title' id='contactBoxModalLabel-<?= $box['id'] ?>'>Edit
-                                                    <?= htmlspecialchars($box['title']) ?></h5>
+                                                    <?= htmlspecialchars($box['title']) ?>
+                                                </h5>
                                                 <button type="button" class="close" data-bs-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
