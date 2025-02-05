@@ -1,20 +1,19 @@
 <?php
 include 'check.php';
 
-$categories = $query->eQuery('SELECT * FROM category');
+// Kategoriya va mahsulotlar sonini olish
+$categories = $query->eQuery('
+    SELECT c.id, c.category_name, COUNT(p.id) AS product_count
+    FROM category c
+    LEFT JOIN product p ON p.category_id = c.id
+    GROUP BY c.id');
 
 // Add Category
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add' && isset($_POST['category_name'])) {
     $category_name = $_POST['category_name'];
-
-    $check = $query->eQuery('SELECT COUNT(*) FROM category WHERE category_name = ?', [$category_name]);
-    if ($check[0]['COUNT(*)'] > 0) {
-        echo "<script>alert('Category already exists');</script>";
-    } else {
-        $query->eQuery('INSERT INTO category (category_name) VALUES (?)', [$category_name]);
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit;
-    }
+    $query->eQuery('INSERT INTO category (category_name) VALUES (?)', [$category_name]);
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
 }
 
 // Update Category
@@ -31,18 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     $delete_id = $_POST['delete_id'];
     $query->eQuery('DELETE FROM category WHERE id = ?', [$delete_id]);
     header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
-}
-
-// Check Category
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'check_category' && isset($_POST['category_name'])) {
-    $category_name = $_POST['category_name'];
-    $check = $query->eQuery('SELECT COUNT(*) FROM category WHERE category_name = ?', [$category_name]);
-    if ($check[0]['COUNT(*)'] > 0) {
-        echo 'exists';
-    } else {
-        echo 'not_exists';
-    }
     exit;
 }
 ?>
@@ -62,20 +49,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php include 'includes/header.php' ?>
+        <?php include 'includes/header.php'; ?>
         <div class="content-wrapper">
             <section class="content">
                 <div class="container-fluid">
+
                     <div class="row">
                         <!-- Category table -->
                         <div class="col-md-12">
-                            <!-- Add Category -->
+                            <!-- Add Category Button -->
                             <button type="button" class="btn btn-primary mb-3" data-toggle="modal"
                                 data-target="#addCategoryModal" id="addCategoryLabel">
                                 Add Category
                             </button>
 
-                            <!-- Add Category modal -->
+                            <!-- Add Category Modal -->
                             <div class="modal fade" id="addCategoryModal" tabindex="-1" role="dialog"
                                 aria-labelledby="addCategoryLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -105,12 +93,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                 </div>
                             </div>
 
+                            <!-- Category Table -->
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>№</th>
                                         <th>Categories</th>
-                                        <th>Product number</th>
+                                        <th>Product Number</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -120,16 +109,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                             <td><?php echo $index + 1; ?></td>
                                             <td><?php echo htmlspecialchars($category['category_name'], ENT_QUOTES, 'UTF-8'); ?>
                                             </td>
-                                            <td></td>
+                                            <td><?php echo $category['product_count']; ?></td>
+                                            <!-- Mahsulot sonini chiqarish -->
                                             <td>
+                                                <!-- Edit Button -->
                                                 <button type="button" class="btn btn-warning" data-toggle="modal"
                                                     data-target="#editModal<?php echo $category['id']; ?>">Edit</button>
+
+                                                <!-- Delete Button -->
                                                 <button type="button" class="btn btn-danger"
                                                     onclick="deleteCategory(<?php echo $category['id']; ?>);">Delete</button>
                                             </td>
                                         </tr>
 
-                                        <!-- Edit modal -->
+                                        <!-- Edit Category Modal -->
                                         <div class="modal fade" id="editModal<?php echo $category['id']; ?>" tabindex="-1"
                                             role="dialog" aria-labelledby="editLabel<?php echo $category['id']; ?>"
                                             aria-hidden="true">
@@ -181,31 +174,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     <?php include 'includes/js.php'; ?>
 
     <script>
-        $('form').submit(function (e) {
-            e.preventDefault();
-
-            var categoryName = $('input[name="category_name"]').val();
-
-            $.ajax({
-                type: 'POST',
-                url: '',
-                data: {
-                    action: 'check_category',
-                    category_name: categoryName
-                },
-                success: function (response) {
-                    if (response === 'exists') {
-                        Swal.fire("Error!", "This category already exists!", "error");
-                    } else {
-                        $('form')[0].submit();
-                    }
-                },
-                error: function (xhr, status, error) {
-                    Swal.fire("Error!", "There was an error checking the category.", "error");
-                }
-            });
-        });
-
         function deleteCategory(id) {
             Swal.fire({
                 title: "Are you sure?",
