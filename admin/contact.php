@@ -85,22 +85,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <!-- Navbar -->
-        <?php include 'includes/navbar.php'; ?>
-        <?php active('Contact', 1); ?>
-
-        <div class="main-header">
-            <?php
-            $breadcrumbs = [
-                ["title" => "Contact", "url" => "./"],
-                ["title" => "Information", "url" => "#"],
-            ];
-            pagePath('Contact Information', $breadcrumbs);
-            ?>
-        </div>
-
+        <?php include 'includes/header.php' ?>
         <div class="content-wrapper">
-            <br>
+
             <section class="content">
                 <div class="container-fluid">
 
