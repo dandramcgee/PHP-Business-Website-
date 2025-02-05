@@ -131,11 +131,11 @@ $query = new Database();
 
   <script>
     document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault(); // Prevent form submission
+      e.preventDefault(); 
 
       // Ensure the form submission happens only once
       const submitButton = e.target.querySelector('button[type="submit"]');
-      submitButton.disabled = true; // Disable the button
+      submitButton.disabled = true; 
 
       const formData = new FormData(this);
       const xhr = new XMLHttpRequest();
