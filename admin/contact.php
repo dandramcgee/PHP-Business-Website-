@@ -119,22 +119,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             $socials = ['twitter', 'facebook', 'instagram', 'linkedin'];
                             foreach ($socials as $index => $social) {
                                 $socialLink = $contact[$social] ?? '';
-                            ?>
+                                ?>
                                 <tr>
                                     <td><?php echo ($index + 1); ?></td>
                                     <td><?php echo ucfirst($social); ?></td>
                                     <td><?php echo $socialLink; ?></td>
                                     <td>
-                                        <button class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#contactModal-<?php echo $index; ?>'>Edit</button>
+                                        <button class='btn btn-warning' data-bs-toggle='modal'
+                                            data-bs-target='#contactModal-<?php echo $index; ?>'>Edit</button>
                                     </td>
                                 </tr>
 
-                                <div class='modal fade' id='contactModal-<?php echo $index; ?>' tabindex='-1' aria-labelledby='contactModalLabel-<?php echo $index; ?>' aria-hidden='true'>
+                                <div class='modal fade' id='contactModal-<?php echo $index; ?>' tabindex='-1'
+                                    aria-labelledby='contactModalLabel-<?php echo $index; ?>' aria-hidden='true'>
                                     <div class='modal-dialog'>
                                         <div class='modal-content'>
                                             <div class='modal-header'>
-                                                <h5 class='modal-title' id='contactModalLabel-<?php echo $index; ?>'>Edit <?php echo ucfirst($social); ?></h5>
-                                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                <h5 class='modal-title' id='contactModalLabel-<?php echo $index; ?>'>Edit
+                                                    <?php echo ucfirst($social); ?></h5>
+                                                <button type="button" class="close" data-bs-dismiss="modal"
+                                                    aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
@@ -142,8 +146,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <div class='modal-body'>
                                                 <form id='contactForm-<?php echo $index; ?>' action='' method='POST'>
                                                     <div class='form-group'>
-                                                        <label for='<?php echo $social; ?>'><?php echo ucfirst($social); ?></label>
-                                                        <input type='text' name='<?php echo $social; ?>' id='<?php echo $social; ?>' class='form-control' value='<?php echo $socialLink; ?>' maxlength='255'>
+                                                        <label
+                                                            for='<?php echo $social; ?>'><?php echo ucfirst($social); ?></label>
+                                                        <input type='text' name='<?php echo $social; ?>'
+                                                            id='<?php echo $social; ?>' class='form-control'
+                                                            value='<?php echo $socialLink; ?>' maxlength='255'>
                                                     </div>
                                                     <button type='submit' class='btn btn-primary'>Save</button>
                                                 </form>
@@ -173,17 +180,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <td><?= htmlspecialchars($box['title']) ?></td>
                                     <td><?= htmlspecialchars($box['value']) ?></td>
                                     <td>
-                                        <button class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#contactBoxModal-<?= $box['id'] ?>'>Edit</button>
+                                        <button class='btn btn-warning' data-bs-toggle='modal'
+                                            data-bs-target='#contactBoxModal-<?= $box['id'] ?>'>Edit</button>
                                     </td>
                                 </tr>
 
                                 <!-- Individual modal for each contact box -->
-                                <div class='modal fade' id='contactBoxModal-<?= $box['id'] ?>' tabindex='-1' aria-labelledby='contactBoxModalLabel-<?= $box['id'] ?>' aria-hidden='true'>
+                                <div class='modal fade' id='contactBoxModal-<?= $box['id'] ?>' tabindex='-1'
+                                    aria-labelledby='contactBoxModalLabel-<?= $box['id'] ?>' aria-hidden='true'>
                                     <div class='modal-dialog'>
                                         <div class='modal-content'>
                                             <div class='modal-header'>
-                                                <h5 class='modal-title' id='contactBoxModalLabel-<?= $box['id'] ?>'>Edit <?= htmlspecialchars($box['title']) ?></h5>
-                                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                <h5 class='modal-title' id='contactBoxModalLabel-<?= $box['id'] ?>'>Edit
+                                                    <?= htmlspecialchars($box['title']) ?></h5>
+                                                <button type="button" class="close" data-bs-dismiss="modal"
+                                                    aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
@@ -191,11 +202,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                 <form id='contactBoxForm-<?= $box['id'] ?>' action='' method='POST'>
                                                     <div class='form-group'>
                                                         <label for='title-<?= $box['id'] ?>'>Title</label>
-                                                        <input type='text' name='title-<?= $box['id'] ?>' id='title-<?= $box['id'] ?>' class='form-control' value='<?= htmlspecialchars($box['title']) ?>' maxlength='255'>
+                                                        <input type='text' name='title-<?= $box['id'] ?>'
+                                                            id='title-<?= $box['id'] ?>' class='form-control'
+                                                            value='<?= htmlspecialchars($box['title']) ?>' maxlength='255'>
                                                     </div>
                                                     <div class='form-group'>
-                                                        <label for='value-<?= $box['id'] ?>'><i class='<?= htmlspecialchars($box['icon']) ?>'></i> <?= htmlspecialchars($box['title']) ?></label>
-                                                        <input type='text' name='value-<?= $box['id'] ?>' id='value-<?= $box['id'] ?>' class='form-control' value='<?= htmlspecialchars($box['value']) ?>' maxlength='255'>
+                                                        <label for='value-<?= $box['id'] ?>'><i
+                                                                class='<?= htmlspecialchars($box['icon']) ?>'></i>
+                                                            <?= htmlspecialchars($box['title']) ?></label>
+                                                        <input type='text' name='value-<?= $box['id'] ?>'
+                                                            id='value-<?= $box['id'] ?>' class='form-control'
+                                                            value='<?= htmlspecialchars($box['value']) ?>' maxlength='255'>
                                                     </div>
                                                     <button type='submit' class='btn btn-primary'>Save</button>
                                                 </form>
@@ -219,15 +236,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             <?php foreach ($socials as $index => $social) { ?>
-                $('#contactForm-<?= $index ?>').on('submit', function(event) {
+                $('#contactForm-<?= $index ?>').on('submit', function (event) {
                     event.preventDefault();
                     $.ajax({
                         url: '',
                         method: 'POST',
                         data: $(this).serialize(),
-                        success: function(response) {
+                        success: function (response) {
                             const data = JSON.parse(response);
                             if (<?= $index ?> === 0) {
                                 $('#twitter').val(data.twitter);
@@ -242,13 +259,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php } ?>
 
             <?php foreach ($contact_box as $box) { ?>
-                $('#contactBoxForm-<?= $box['id'] ?>').on('submit', function(event) {
+                $('#contactBoxForm-<?= $box['id'] ?>').on('submit', function (event) {
                     event.preventDefault();
                     $.ajax({
                         url: '',
                         method: 'POST',
                         data: $(this).serialize(),
-                        success: function(response) {
+                        success: function (response) {
                             const data = JSON.parse(response);
                             const titleField = 'title-' + <?= $box['id'] ?>;
                             const valueField = 'value-' + <?= $box['id'] ?>;
