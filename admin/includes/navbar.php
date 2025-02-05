@@ -37,12 +37,13 @@ $count = (new Database())->eQuery("SELECT COUNT(*) AS no_checked_count FROM mess
 function active($menu, $num)
 {
     $num = "$menu-$num";
-?>
+    ?>
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="./" class="brand-link">
-            <img src="../assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <img src="../assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                style="opacity: .8">
             <span class="brand-text font-weight-light">AdminLTE 3</span>
         </a>
 
@@ -171,7 +172,8 @@ function active($menu, $num)
 
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./ourServices.php" class="nav-link <?= ($num === 'Services-1') ? 'active' : ''; ?>">
+                                <a href="./ourServices.php"
+                                    class="nav-link <?= ($num === 'Services-1') ? 'active' : ''; ?>">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Our Services</p>
                                 </a>
@@ -264,11 +266,11 @@ function active($menu, $num)
         <!-- /.sidebar -->
     </aside>
 
-<?php
+    <?php
 }
 function pagePath($pageTitle, $breadcrumb)
 {
-?>
+    ?>
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -277,11 +279,12 @@ function pagePath($pageTitle, $breadcrumb)
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <?php foreach ($breadcrumb as $item) : ?>
-                            <?php if ($item['url'] === '#') : ?>
+                        <?php foreach ($breadcrumb as $item): ?>
+                            <?php if ($item['url'] === '#'): ?>
                                 <li class="breadcrumb-item active"><?php echo $item['title']; ?></li>
-                            <?php else : ?>
-                                <li class="breadcrumb-item"><a href="<?php echo $item['url']; ?>"><?php echo $item['title']; ?></a></li>
+                            <?php else: ?>
+                                <li class="breadcrumb-item"><a href="<?php echo $item['url']; ?>"><?php echo $item['title']; ?></a>
+                                </li>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </ol>
@@ -290,7 +293,7 @@ function pagePath($pageTitle, $breadcrumb)
         </div>
     </div>
 
-<?php
+    <?php
 }
 ?>
 <script>
