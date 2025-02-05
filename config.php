@@ -71,11 +71,11 @@ class Database
                 }
                 return true;
             } else {
-                error_log("Xato: " . $stmt->error);
+                error_log("ERROR: " . $stmt->error);
                 return false;
             }
         } else {
-            error_log("Xato: " . $this->conn->error);
+            error_log("ERROR: " . $this->conn->error);
             return false;
         }
     }
@@ -85,7 +85,7 @@ class Database
     {
         $result = $this->conn->query($sql);
         if ($result === false) {
-            die("Xatolik: " . $this->conn->error);
+            die("ERROR: " . $this->conn->error);
         }
         return $result;
     }
