@@ -50,6 +50,13 @@ $menuItems = [
         "pages" => [
             ["title" => "Contact Information", "url" => "contact.php"],
         ],
+    ],
+    [
+        "menuTitle" => "",
+        "icon" => "",
+        "pages" => [
+            ["title" => "Messages", "url" => "messages.php"],
+        ],
     ]
 ];
 
