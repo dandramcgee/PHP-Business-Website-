@@ -7,7 +7,13 @@
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
                 <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:<?php echo  $contact_boxData[2]['value']; ?>"><?php echo  $contact_boxData[2]['value']; ?></a></i>
-                <i class="bi bi-phone d-flex align-items-center ms-4"><span><?php echo  $contact_boxData[1]['value']; ?></span></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4">
+                    <span>
+                        <a href="tel:<?php echo trim($contact_boxData[2]['value']); ?>">
+                            <?php echo $contact_boxData[1]['value']; ?>
+                        </a>
+                    </span>
+                </i>
             </div>
             <div class="social-links d-none d-md-flex align-items-center">
                 <a href="https://twitter.com/<?php echo  $contactData[0]['twitter']; ?>" class="twitter"><i class="bi bi-twitter-x"></i></a>
