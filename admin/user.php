@@ -46,25 +46,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
+    <?php include 'includes/header.php' ?>
+    <div class="content-wrapper">
 
-    <!-- Navbar -->
-    <?php include 'includes/navbar.php' ?>
-    <?php active('Dashboard', 2) ?>
-
-    <!-- Page path -->
-    <div class="main-header">
-      <!-- Page path -->
       <?php
       $arr = array(
         ["title" => "Home", "url" => "./"],
         ["title" => "Settings", "url" => "#"],
       );
-      pagePath('Settings', $arr);
+      renderHeader('Settings', $arr);
       ?>
-    </div>
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
 
       <section class="content">
         <div class="container-fluid">
