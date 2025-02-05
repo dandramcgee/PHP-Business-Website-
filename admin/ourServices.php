@@ -15,18 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $p2 = $_POST['p2'];
             $image = $_FILES['image']['name'];
 
-            // Retrieve the old image
             $sql = "SELECT image FROM bioServices WHERE id=?";
             $result = $query->eQuery($sql, [$id]);
 
-            // Update process
             if ($image) {
-                // If an old image exists, delete it
                 if (file_exists($old_image_path)) {
                     unlink($old_image_path);
                 }
 
-                // Check image extension
                 $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif'];
                 $image_extension = pathinfo($image, PATHINFO_EXTENSION);
 
@@ -34,25 +30,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     throw new Exception("Invalid image extension.");
                 }
 
-                // Create a new image name
                 $new_image_name = uniqid() . '-' . basename($image);
                 $target_path = "../assets/img/$new_image_name";
 
-                // Upload the new image
                 if (!move_uploaded_file($_FILES['image']['tmp_name'], $target_path)) {
                     throw new Exception("Error occurred during image upload.");
                 }
 
-                // Update the data
                 $sql = "UPDATE bioServices SET h2=?, p1=?, image=?, h3=?, p2=? WHERE id=?";
                 $query->eQuery($sql, [$h2, $p1, $new_image_name, $h3, $p2, $id]);
             } else {
-                // If no new image is provided, only update text data
                 $sql = "UPDATE bioServices SET h2=?, p1=?, h3=?, p2=? WHERE id=?";
                 $query->eQuery($sql, [$h2, $p1, $h3, $p2, $id]);
             }
 
-            // Redirect to the updated page
             header('Location: ourServices.php?updated=true');
             exit();
         }
@@ -63,16 +54,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $service_name = $_POST['service_name'];
             $skill_level = $_POST['skill_level'];
 
-            // Update the data
             $sql = "UPDATE ourServices SET service_name=?, skill_level=? WHERE id=?";
             $query->eQuery($sql, [$service_name, $skill_level, $id]);
 
-            // Redirect to the updated page
             header('Location: ourServices.php?updated=true');
             exit();
         }
     } catch (Exception $e) {
-        // Error message
         echo 'Error: ' . $e->getMessage();
     }
 }
