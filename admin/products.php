@@ -80,28 +80,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php include 'includes/navbar.php'; ?>
-        <?php active('Products', 2); ?>
-
-        <div class="main-header">
-
-            <!-- Page path -->
-            <?php
-            $arr = array(
-                ["title" => "Products", "url" => "./"],
-                ["title" => "My Products", "url" => "#"],
-            );
-            pagePath('My Products', $arr);
-            ?>
-
-        </div>
-
+        <?php include 'includes/header.php' ?>
         <div class="content-wrapper">
-
-            <br>
 
             <section class="content">
                 <div class="container-fluid">
+
                     <div class="row">
                         <div class="col-md-12">
 
