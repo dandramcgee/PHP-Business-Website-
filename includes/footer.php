@@ -8,8 +8,8 @@
                 </a>
                 <div class="footer-contact pt-3">
                     <p><strong>Location:</strong> <?php echo  $contact_boxData[0]['value']; ?></p>
-                    <p class="mt-3"><strong>Phone:</strong> <span><?php echo  $contact_boxData[1]['value']; ?></span></p>
-                    <p><strong>Email:</strong> <span><?php echo  $contact_boxData[2]['value']; ?></span></p>
+                    <p class="mt-3"><strong>Phone:</strong> <span> </span></p>
+                    <p><strong>Email:</strong> <span> </span></p>
                 </div>
             </div>
 
