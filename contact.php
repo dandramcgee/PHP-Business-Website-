@@ -49,7 +49,7 @@ $query = new Database();
     <!-- Contact section -->
     <section id="contact" class="contact section">
 
-      <div class="container" data-aos="fade-up">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
 
@@ -66,7 +66,7 @@ $query = new Database();
         </div>
 
         <div class="row gy-4 mt-1">
-          <div class="col-lg-6" data-aos="fade-up">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5792.162896136428!2d66.97004124999109!3d39.65178209523781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d21d3f20f2e7d:0x65da282d59cb1b22!2z0KjQv9C70LDQudC-0LLQvtCy0YfQutC40Y8g0YDQvtCx0YHRgtC10YHQvtCy0YbQu9C10LvQvtC1!5e0!3m2!1sen!2suz!4v1695613534192!5m2!1sen!2suz"
               frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen="" loading="lazy"
