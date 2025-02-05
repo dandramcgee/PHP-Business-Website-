@@ -64,14 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php include 'includes/header.php' ?>
         <div class="content-wrapper">
 
-            <?php
-            $arr = array(
-                ["title" => "About Us", "url" => "./"],
-                ["title" => "About", "url" => "#"],
-            );
-            renderHeader('About Us', $arr);
-            ?>
-
             <section class="content">
                 <div class="container-fluid">
 
