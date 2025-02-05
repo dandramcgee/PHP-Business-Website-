@@ -18,17 +18,16 @@
     <div class="wrapper">
 
         <!-- Navbar -->
-        <?php include 'includes/navbar.php' ?>
+        <?php include 'includes/header.php' ?>
 
-        <?php active('Dashboard', 1) ?>
         <div class="main-header">
             <!-- Page path -->
             <?php
             $arr = array(
                 ["title" => "Home", "url" => "./"],
-                ["title" => "Admin", "url" => "#"],
+                ["title" => "Dashboard", "url" => "#"],
             );
-            pagePath('Dashboard', $arr);
+            renderHeader('Dashboard', $arr);
             ?>
         </div>
 
@@ -52,7 +51,8 @@
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
 
@@ -67,7 +67,8 @@
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
 
@@ -81,7 +82,8 @@
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
 
@@ -96,7 +98,8 @@
                                 <div class="icon">
                                     <i class="ion ion-pie-graph"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
                             </div>
 
                         </div>
