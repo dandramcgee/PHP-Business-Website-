@@ -37,29 +37,20 @@ if (isset($_GET['edit'])) {
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
+        <?php include 'includes/header.php' ?>
+        <div class="content-wrapper">
 
-        <!-- Navbar -->
-        <?php include 'includes/navbar.php' ?>
-        <?php active('HomePage', 2) ?>
-
-        <div class="main-header">
-            <!-- Page path -->
             <?php
             $arr = array(
                 ["title" => "Home", "url" => "./"],
                 ["title" => "Features", "url" => "#"],
             );
-            pagePath('Features', $arr);
+            renderHeader('Features', $arr);
             ?>
-        </div>
-
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-
-            <br>
 
             <section class="content">
                 <div class="container-fluid">
+                    
                     <div class="row">
                         <div class="col-12">
                             <table class="table table-bordered">
