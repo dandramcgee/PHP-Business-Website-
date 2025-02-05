@@ -3,6 +3,7 @@ include 'check.php';
 
 // Select Category
 $categories = $query->eQuery('SELECT 
+    c.id,
     c.category_name, 
     COUNT(p.id) AS product_count
 FROM 
@@ -10,7 +11,7 @@ FROM
 LEFT JOIN 
     products p ON c.id = p.category_id
 GROUP BY 
-    c.category_name;
+    c.id, c.category_name;
 ');
 
 // Add Category
