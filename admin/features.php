@@ -63,13 +63,13 @@ if (isset($_GET['edit'])) {
                                         $index++;
                                         echo "<tr>";
                                         echo "<td>{$index}</td>";
-                                        echo "<td>{$feature['title']}</td>";
-                                        echo "<td>{$feature['description']}</td>";
+                                        echo "<td>" . htmlspecialchars($feature['title'], ENT_QUOTES, 'UTF-8') . "</td>";
+                                        echo "<td>" . htmlspecialchars($feature['description'], ENT_QUOTES, 'UTF-8') . "</td>";
                                         echo "<td>
-                                            <a href='#' class='btn btn-warning btn-warning' data-id='{$feature['id']}' data-title='{$feature['title']}' data-description='{$feature['description']}' data-icon='{$feature['icon']}'>Edit</a>
+                                            <a href='#' class='btn btn-warning' data-id='{$feature['id']}' data-title='" . htmlspecialchars($feature['title'], ENT_QUOTES, 'UTF-8') . "' data-description='" . htmlspecialchars($feature["description"], ENT_QUOTES, 'UTF-8') . "' data-icon='{$feature['icon']}'>Edit</a>
                                         </td>";
                                         echo "</tr>";
-                                    }
+                                    }                                    
                                     ?>
                                 </tbody>
                             </table>
