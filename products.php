@@ -77,7 +77,6 @@ foreach ($products as $product) {
                   <div class="portfolio-content h-100">
                     <a href="product-details.php?id=<?= $product['id'] ?>">
                       <?php
-                      // Initialize the image URL
                       $image_url = '';
                       // Fetch the image URL for the current product
                       foreach ($product_images as $image) {
