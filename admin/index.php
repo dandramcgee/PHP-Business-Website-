@@ -16,12 +16,9 @@
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-
-        <!-- Navbar -->
         <?php include 'includes/header.php' ?>
+        <div class="content-wrapper">
 
-        <div class="main-header">
-            <!-- Page path -->
             <?php
             $arr = array(
                 ["title" => "Home", "url" => "./"],
@@ -29,12 +26,6 @@
             );
             renderHeader('Dashboard', $arr);
             ?>
-        </div>
-
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-
-            <br>
 
             <section class="content">
                 <div class="container-fluid">
@@ -106,10 +97,10 @@
                     </div>
 
                 </div>
+
             </section>
         </div>
 
-        <!-- Main Footer -->
         <?php include 'includes/footer.php'; ?>
     </div>
 
