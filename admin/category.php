@@ -115,7 +115,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                             <td><?php echo htmlspecialchars($category['category_name'], ENT_QUOTES, 'UTF-8'); ?>
                                             </td>
                                             <td><?php echo $category['product_count']; ?></td>
-                                            <!-- Mahsulot sonini chiqarish -->
                                             <td>
                                                 <!-- Edit Button -->
                                                 <button type="button" class="btn btn-warning" data-toggle="modal"
