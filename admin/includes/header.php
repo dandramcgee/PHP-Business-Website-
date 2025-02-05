@@ -52,12 +52,12 @@ $menuItems = [
         ],
     ],
     [
-        "menuTitle" => "",
-        "icon" => "",
+        "menuTitle" => "Notifications",
+        "icon" => "fa-solid fa-bell",
         "pages" => [
             ["title" => "Messages", "url" => "messages.php"],
         ],
-    ]
+    ],
 ];
 
 $breadcrumbItems = [];
