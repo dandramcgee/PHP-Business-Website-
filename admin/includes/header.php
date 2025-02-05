@@ -65,25 +65,6 @@ foreach ($menuItems as $menuItem) {
 }
 ?>
 
-<div class="main-header" style="padding: 0px 10px; background-color: #f4f6f9; border-bottom: none !important;">
-    <div class="content-header">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1 class="m-0 text-dark"> <?= $pageTitle ?> </h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <?php foreach ($breadcrumbItems as $item): ?>
-                        <li class="breadcrumb-item <?= $item['url'] === '#' ? 'active' : '' ?>">
-                            <?= $item['url'] === '#' ? $item['title'] : "<a href='{$item['url']}'>{$item['title']}</a>" ?>
-                        </li>
-                    <?php endforeach; ?>
-                </ol>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Count the number of unchecked messages -->
 <?php $count = (new Database())->eQuery("SELECT COUNT(*) AS no_checked_count FROM messages WHERE status = 'no_checked';")[0]['no_checked_count']; ?>
 
@@ -115,6 +96,25 @@ foreach ($menuItems as $menuItem) {
         </li>
     </ul>
 </nav>
+
+<div class="main-header" style="padding: 0px 10px; background-color: #f4f6f9; border-bottom: none !important;">
+    <div class="content-header">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark"> <?= $pageTitle ?> </h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <?php foreach ($breadcrumbItems as $item): ?>
+                        <li class="breadcrumb-item <?= $item['url'] === '#' ? 'active' : '' ?>">
+                            <?= $item['url'] === '#' ? $item['title'] : "<a href='{$item['url']}'>{$item['title']}</a>" ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="./" class="brand-link">
