@@ -55,7 +55,8 @@ $query = new Database();
 
           <?php foreach ($contact_boxData as $contact): ?>
             <div class="col-lg-<?php echo ($contact['id'] == 1) ? '6' : '3'; ?> col-md-6">
-              <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="100">
+              <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+                data-aos-delay="100">
                 <i class="<?php echo $contact['icon']; ?>"></i>
                 <h3><?php echo $contact['title']; ?></h3>
                 <p><?php echo $contact['value']; ?></p>
@@ -68,13 +69,14 @@ $query = new Database();
         <div class="row gy-4 mt-1">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5792.162896136428!2d66.97004124999109!3d39.65178209523781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d21d3f20f2e7d:0x65da282d59cb1b22!2z0KjQv9C70LDQudC-0LLQvtCy0YfQutC40Y8g0YDQvtCx0YHRgtC10YHQvtCy0YbQu9C10LvQvtC1!5e0!3m2!1sen!2suz!4v1695613534192!5m2!1sen!2suz"
-              frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen="" loading="lazy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2974.8813426551865!2d67.01298087569626!3d39.58263960598262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d21d3f20f2e7d%3A0x65da282d59cb1b22!2sUy!5e1!3m2!1sen!2s!4v1738728417553!5m2!1sen!2s"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div><!-- End of Google Map -->
 
           <div class="col-lg-6">
-            <form action="send_message.php" method="post" class="php-email-form" id="contactForm" data-aos="fade-up" data-aos-delay="100">
+            <form action="send_message.php" method="post" class="php-email-form" id="contactForm" data-aos="fade-up"
+              data-aos-delay="100">
               <div class="row gy-4">
                 <div class="col-md-6">
                   <input type="text" name="name" class="form-control" placeholder="Your Name" required=""
@@ -131,11 +133,11 @@ $query = new Database();
 
   <script>
     document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault(); 
+      e.preventDefault();
 
       // Ensure the form submission happens only once
       const submitButton = e.target.querySelector('button[type="submit"]');
-      submitButton.disabled = true; 
+      submitButton.disabled = true;
 
       const formData = new FormData(this);
       const xhr = new XMLHttpRequest();
