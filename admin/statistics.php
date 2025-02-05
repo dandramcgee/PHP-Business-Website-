@@ -16,30 +16,20 @@
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
+        <?php include 'includes/header.php' ?>
+        <div class="content-wrapper">
 
-        <!-- Navbar -->
-        <?php include 'includes/navbar.php'; ?>
-        <?php active('AboutUs', 2); ?>
-
-        <div class="main-header">
-
-            <!-- Page path -->
             <?php
             $arr = array(
                 ["title" => "About Us", "url" => "./"],
                 ["title" => "Statistics", "url" => "#"],
             );
-            pagePath('Statistics', $arr);
+            renderHeader('About Us', $arr);
             ?>
-
-        </div>
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-
-            <br>
 
             <section class="content">
                 <div class="container-fluid">
+
                     <div class="row">
                         <div class="col-12">
                             <table class="table table-bordered">

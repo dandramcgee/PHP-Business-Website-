@@ -66,15 +66,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <?php
             $arr = array(
-                ["title" => "Home", "url" => "./"],
-                ["title" => "About Us", "url" => "#"],
+                ["title" => "About Us", "url" => "./"],
+                ["title" => "About", "url" => "#"],
             );
             renderHeader('About Us', $arr);
             ?>
 
             <section class="content">
                 <div class="container-fluid">
-                    
+
                     <div class="row">
                         <div class="col-12">
 
