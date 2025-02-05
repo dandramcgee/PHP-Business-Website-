@@ -1,12 +1,17 @@
 <?php
 include 'check.php';
 
-// Kategoriya va mahsulotlar sonini olish
-$categories = $query->eQuery('
-    SELECT c.id, c.category_name, COUNT(p.id) AS product_count
-    FROM category c
-    LEFT JOIN product p ON p.category_id = c.id
-    GROUP BY c.id');
+// Select Category
+$categories = $query->eQuery('SELECT 
+    c.category_name, 
+    COUNT(p.id) AS product_count
+FROM 
+    category c
+LEFT JOIN 
+    products p ON c.id = p.category_id
+GROUP BY 
+    c.category_name;
+');
 
 // Add Category
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add' && isset($_POST['category_name'])) {
