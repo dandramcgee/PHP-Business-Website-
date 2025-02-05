@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     // Image upload process
     $uploadedImages = [];
     $totalFiles = count($_FILES['image']['name']);
-    if ($totalFiles <= 10) { 
+    if ($totalFiles <= 10) {
         for ($i = 0; $i < $totalFiles; $i++) {
             if ($_FILES['image']['error'][$i] == 0) {
                 $image_name = basename($_FILES['image']['name'][$i]);
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 $target_file = $target_dir . $encrypted_name;
 
                 if (move_uploaded_file($_FILES['image']['tmp_name'][$i], $target_file)) {
-                    $uploadedImages[] = $encrypted_name; 
+                    $uploadedImages[] = $encrypted_name;
                 }
             }
         }
@@ -106,7 +106,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                         <div class="col-md-12">
 
                             <!-- Add Product Modal -->
-                            <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#addCategoryModal">
+                            <button type="button" class="btn btn-primary mb-3" data-toggle="modal"
+                                data-target="#addCategoryModal">
                                 Add Product
                             </button>
 
@@ -132,14 +133,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                             ?>
                                             <td><?php echo $i + 1; ?></td>
                                             <td><?php echo htmlspecialchars($product['product_name']); ?></td>
-                                            <td><img src="<?= $product_image ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>" style="width: 100px;"></td>
+                                            <td><img src="<?= $product_image ?>"
+                                                    alt="<?php echo htmlspecialchars($product['product_name']); ?>"
+                                                    style="width: 100px;"></td>
                                             <td><?php echo htmlspecialchars($product['price']); ?></td>
                                             <td><?php echo htmlspecialchars($product['description']); ?></td>
                                             <?php $category_id = $product['category_id'] ?>
-                                            <td><?php echo $query->select('category',  '*', "Where id = $category_id")[0]['category_name']; ?></td>
+                                            <td><?php echo $query->select('category', '*', "Where id = $category_id")[0]['category_name']; ?>
+                                            </td>
 
                                             <td>
-                                                <button type="button" class="btn btn-danger" onclick="deleteProduct(<?php echo $productid; ?>)">
+                                                <button type="button" class="btn btn-danger"
+                                                    onclick="deleteProduct(<?php echo $productid; ?>)">
                                                     Delete
                                                 </button>
                                             </td>
@@ -149,7 +154,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                             </table>
 
                             <!-- Add Category Modal -->
-                            <div class="modal fade" id="addCategoryModal" tabindex="-1" role="dialog" aria-labelledby="addCategoryLabel" aria-hidden="true">
+                            <div class="modal fade" id="addCategoryModal" tabindex="-1" role="dialog"
+                                aria-labelledby="addCategoryLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -163,32 +169,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                                 <input type="hidden" name="action" value="add">
                                                 <div class="form-group">
                                                     <label for="product_name">Product Name</label>
-                                                    <input type="text" class="form-control" name="product_name" id="productName" maxlength="255" required>
+                                                    <input type="text" class="form-control" name="product_name"
+                                                        id="productName" maxlength="255" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="price">Price</label>
-                                                    <input type="number" class="form-control" name="price" id="productPrice" required>
+                                                    <input type="number" class="form-control" name="price"
+                                                        id="productPrice" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="description">Description</label>
-                                                    <textarea class="form-control" name="description" id="productDescription" required></textarea>
+                                                    <textarea class="form-control" name="description"
+                                                        id="productDescription" required></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="category_id">Select Category</label>
-                                                    <select class="form-control" name="category_id" id="category_id" required>
+                                                    <select class="form-control" name="category_id" id="category_id"
+                                                        required>
                                                         <option value="">Select Category</option>
                                                         <?php foreach ($categories as $category): ?>
-                                                            <option value="<?php echo $category['id']; ?>"><?php echo htmlspecialchars($category['category_name']); ?></option>
+                                                            <option value="<?php echo $category['id']; ?>">
+                                                                <?php echo htmlspecialchars($category['category_name']); ?>
+                                                            </option>
                                                         <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="image">Upload Images (up to 10)</label>
-                                                    <input type="file" class="form-control" name="image[]" id="productImage" accept="image/*" multiple required>
+                                                    <input type="file" class="form-control" name="image[]"
+                                                        id="productImage" accept="image/*" multiple required>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
                                                 <button type="submit" class="btn btn-primary">Add</button>
                                             </div>
                                         </form>
@@ -226,7 +240,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                             action: 'delete',
                             delete_id: id
                         },
-                        success: function(response) {
+                        success: function (response) {
                             if (response === 'success') {
                                 $('#product' + id).remove();
                                 Swal.fire("Deleted!", "Product deleted successfully!", "success");
@@ -234,7 +248,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                 Swal.fire("Error!", "An error occurred!", "error");
                             }
                         },
-                        error: function() {
+                        error: function () {
                             Swal.fire("Error!", "An error occurred with the AJAX request!", "error");
                         }
                     });
