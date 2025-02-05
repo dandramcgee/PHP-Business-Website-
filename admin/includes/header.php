@@ -9,7 +9,7 @@ $menuItems = [
         "icon" => "fa-solid fa-user-gear",
         "pages" => [
             ["title" => "Admin", "url" => "index.php"],
-            ["title" => "Settings", "url" => "user.php"],
+            ["title" => "User Settings", "url" => "user.php"],
         ],
     ],
     [
@@ -24,7 +24,7 @@ $menuItems = [
         "menuTitle" => "About Us",
         "icon" => "fa fa-info-circle",
         "pages" => [
-            ["title" => "About", "url" => "about.php"],
+            ["title" => "About Us", "url" => "about.php"],
             ["title" => "Statistics", "url" => "statistics.php"],
         ],
     ],
@@ -40,15 +40,15 @@ $menuItems = [
         "menuTitle" => "Products",
         "icon" => "fa fa-shopping-bag",
         "pages" => [
-            ["title" => "Categories", "url" => "category.php"],
-            ["title" => "Products", "url" => "products.php"],
+            ["title" => "Product Categories", "url" => "category.php"],
+            ["title" => "All Products", "url" => "products.php"],
         ],
     ],
     [
         "menuTitle" => "Contact",
         "icon" => "fa-solid fa-address-book",
         "pages" => [
-            ["title" => "Information", "url" => "contact.php"],
+            ["title" => "Contact Information", "url" => "contact.php"],
         ],
     ]
 ];
