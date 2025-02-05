@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     $category_name = $_POST['category_name'];
     $check = $query->eQuery('SELECT COUNT(*) FROM category WHERE category_name = ?', [$category_name]);
     if ($check[0]['COUNT(*)'] > 0) {
-        echo 'exists'; 
+        echo 'exists';
     } else {
         echo 'not_exists';
     }
@@ -182,7 +182,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         $('form').submit(function (e) {
             e.preventDefault();
 
-            var categoryName = $('input[name="category_name"]').val(); 
+            var categoryName = $('input[name="category_name"]').val();
 
             $.ajax({
                 type: 'POST',
