@@ -48,29 +48,12 @@ if (isset($_POST['delete_message_id'])) {
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-
-        <!-- Navbar -->
-        <?php include 'includes/navbar.php'; ?>
-        <?php active('Messages', 1); ?>
-
-        <div class="main-header">
-            <!-- Page path -->
-            <?php
-            $arr = array(
-                ["title" => "Home", "url" => "./"],
-                ["title" => "Messages", "url" => "#"],
-            );
-            pagePath('Messages', $arr);
-            ?>
-        </div>
-
-        <!-- Content Wrapper. Contains page content -->
+        <?php include 'includes/header.php' ?>
         <div class="content-wrapper">
-
-            <br>
 
             <section class="content">
                 <div class="container-fluid">
+
                     <div class="row">
                         <!-- Display messages -->
                         <div class="col-12">
