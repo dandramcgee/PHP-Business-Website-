@@ -34,9 +34,7 @@
                 <h1 class="sitename">Iqbolshoh<br></h1>
             </a>
 
-            <?php
-            $current_page = basename($_SERVER['PHP_SELF']); // Get the current page name
-            ?>
+            <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
 
             <nav id="navmenu" class="navmenu">
                 <ul>
