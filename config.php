@@ -9,7 +9,7 @@ class Database
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "Iqbolshoh";
+        $dbname = "bussiness_website";
 
         $this->conn = new mysqli($servername, $username, $password, $dbname);
 
