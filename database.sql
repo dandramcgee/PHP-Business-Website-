@@ -1,6 +1,6 @@
-CREATE DATABASE Iqbolshoh;
+CREATE DATABASE bussiness_website;
 
-USE Iqbolshoh;
+USE bussiness_website;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
