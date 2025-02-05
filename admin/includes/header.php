@@ -85,7 +85,6 @@ foreach ($menuItems as $menuItem) {
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" href="messages.php">
                 <i class="far fa-comments"></i>
