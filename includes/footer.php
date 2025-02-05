@@ -38,7 +38,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename"> Iqbolshoh</strong> <span>All rights reserved</span></p>
+        <p>© <span>Copyright</span> <strong class="px-1 sitename"> <a href="https://iqbolshoh.uz/"> Iqbolshoh.uz</a></strong> <span>All rights reserved</span></p>
     </div>
 
     <style>
