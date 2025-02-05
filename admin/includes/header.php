@@ -15,48 +15,41 @@ $menuItems = [
         "menuTitle" => "Home",
         "icon" => "fa-solid fa-house",
         "pages" => [
-            ["title" => "Banner", "url" => "./banner.php"],
-            ["title" => "Features", "url" => "./features.php"],
+            ["title" => "Banner", "url" => "banner.php"],
+            ["title" => "Features", "url" => "features.php"],
         ],
     ],
     [
         "menuTitle" => "About Us",
         "icon" => "fa fa-info-circle",
         "pages" => [
-            ["title" => "About", "url" => "./about.php"],
-            ["title" => "Statistics", "url" => "./statistics.php"],
+            ["title" => "About", "url" => "about.php"],
+            ["title" => "Statistics", "url" => "statistics.php"],
         ],
     ],
     [
         "menuTitle" => "Services",
         "icon" => "fa fa-briefcase",
         "pages" => [
-            ["title" => "Our Services", "url" => "./ourServices.php"],
-            ["title" => "Services", "url" => "./services.php"],
+            ["title" => "Our Services", "url" => "ourServices.php"],
+            ["title" => "Services", "url" => "services.php"],
         ],
     ],
     [
         "menuTitle" => "Products",
         "icon" => "fa fa-shopping-bag",
         "pages" => [
-            ["title" => "Categories", "url" => "./category.php"],
-            ["title" => "Products", "url" => "./products.php"],
+            ["title" => "Categories", "url" => "category.php"],
+            ["title" => "Products", "url" => "products.php"],
         ],
     ],
     [
         "menuTitle" => "Contact",
         "icon" => "fa-solid fa-address-book",
         "pages" => [
-            ["title" => "Information", "url" => "./contact.php"],
+            ["title" => "Information", "url" => "contact.php"],
         ],
-    ],
-    [
-        "menuTitle" => "Logout",
-        "icon" => "fa-solid fa-right-from-bracket",
-        "pages" => [
-            ["title" => "Logout", "url" => "#", "onclick" => "logout()"],
-        ],
-    ],
+    ]
 ];
 ?>
 
