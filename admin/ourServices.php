@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <section class="content">
                 <div class="container-fluid">
-                    
+
                     <div class="row">
                         <div class="col-12">
 
@@ -125,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         echo "<td>{$service['h3']}</td>"; // Subtitle
                                         echo "<td>{$service['p2']}</td>"; // Paragraph
                                         echo "<td><img src='../assets/img/{$service['image']}' alt='{$service['h2']}' style='width: 100px; height: auto;'></td>"; // Image
-                                    ?>
+                                        ?>
                                         <td>
                                             <button class="btn btn-warning edit-service"
                                                 data-id="<?php echo $service['id']; ?>"
@@ -137,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                 Edit
                                             </button>
                                         </td>
-                                    <?php
+                                        <?php
                                     }
                                     ?>
                                 </tbody>
@@ -181,7 +181,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 
     <!-- Edit Modal -->
-    <div class="modal fade" id="editServiceModal" tabindex="-1" role="dialog" aria-labelledby="editServiceModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editServiceModal" tabindex="-1" role="dialog" aria-labelledby="editServiceModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -196,12 +197,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                         <div class="form-group">
                             <label for="h2">Title:</label>
-                            <input type="text" class="form-control" name="h2" id="h2" placeholder="Enter the title" maxlength="255" required>
+                            <input type="text" class="form-control" name="h2" id="h2" placeholder="Enter the title"
+                                maxlength="255" required>
                         </div>
 
                         <div class="form-group">
                             <label for="p1">Comment:</label>
-                            <textarea class="form-control" name="p1" id="p1" placeholder="Enter the comment" required></textarea>
+                            <textarea class="form-control" name="p1" id="p1" placeholder="Enter the comment"
+                                required></textarea>
                         </div>
 
                         <div class="form-group">
@@ -211,12 +214,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                         <div class="form-group">
                             <label for="h3">Additional Title:</label>
-                            <input type="text" class="form-control" name="h3" id="h3" placeholder="Enter additional title" required>
+                            <input type="text" class="form-control" name="h3" id="h3"
+                                placeholder="Enter additional title" required>
                         </div>
 
                         <div class="form-group">
                             <label for="p2">Additional Paragraph:</label>
-                            <textarea class="form-control" name="p2" id="p2" placeholder="Enter additional paragraph" required></textarea>
+                            <textarea class="form-control" name="p2" id="p2" placeholder="Enter additional paragraph"
+                                required></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary" name="update_bio_services">Update</button>
@@ -227,7 +232,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 
     <!-- Our Services Edit Modal -->
-    <div class="modal fade" id="editOurServiceModal" tabindex="-1" role="dialog" aria-labelledby="editOurServiceModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editOurServiceModal" tabindex="-1" role="dialog"
+        aria-labelledby="editOurServiceModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -241,11 +247,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="hidden" name="id" id="our-service-id" value="">
                         <div class="form-group">
                             <label for="service_name">Service Name:</label>
-                            <input type="text" class="form-control" name="service_name" id="service_name" maxlength="255" required>
+                            <input type="text" class="form-control" name="service_name" id="service_name"
+                                maxlength="255" required>
                         </div>
                         <div class="form-group">
                             <label for="skill_level">Skill Level:</label>
-                            <input type="text" class="form-control" name="skill_level" id="skill_level" maxlength="2" required>
+                            <input type="text" class="form-control" name="skill_level" id="skill_level" maxlength="2"
+                                required>
                         </div>
                         <button type="submit" class="btn btn-primary" name="update_our_services">Update</button>
                     </form>
