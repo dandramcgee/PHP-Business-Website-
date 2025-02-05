@@ -4,7 +4,7 @@
 $banners = $query->select('banners', '*');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add'])) {
-    
+
     if (isset($_FILES['image']) && $_FILES['image']['name']) {
         $originalImage = $_FILES['image']['name'];
         $extension = pathinfo($originalImage, PATHINFO_EXTENSION);
@@ -45,7 +45,7 @@ if (isset($_GET['delete'])) {
     if (isset($banner[0])) {
         $banner = $banner[0];
         $imagePath = "../assets/img/banners/" . $banner['image'];
-        
+
         if (file_exists($imagePath)) {
             if (unlink($imagePath)) {
                 $query->delete('banners', "WHERE id = {$id}");
