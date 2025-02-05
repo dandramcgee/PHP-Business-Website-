@@ -1,6 +1,6 @@
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-<?php $currentPage = basename($_SERVER['SCRIPT_NAME']); ?>
 <?php
+$currentPage = basename($_SERVER['SCRIPT_NAME']);
+$pageTitle = "";
 // Sidebar-Menu structure -->
 $menuItems = [
     [
@@ -53,11 +53,10 @@ $menuItems = [
 ];
 ?>
 
-<?php
-// Count the number of unchecked messages
-$count = (new Database())->eQuery("SELECT COUNT(*) AS no_checked_count FROM messages WHERE status = 'no_checked';")[0]['no_checked_count'];
-?>
+<!-- Count the number of unchecked messages -->
+<?php $count = (new Database())->eQuery("SELECT COUNT(*) AS no_checked_count FROM messages WHERE status = 'no_checked';")[0]['no_checked_count']; ?>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -86,32 +85,72 @@ $count = (new Database())->eQuery("SELECT COUNT(*) AS no_checked_count FROM mess
     </ul>
 </nav>
 
+<?php
+$currentPage = basename($_SERVER['SCRIPT_NAME']);
+$pageTitle = "";
+
+$menuItems = [
+    [
+        "menuTitle" => "Menu",
+        "icon" => "fas fa-home",
+        "pages" => [
+            ["title" => "Home", "url" => "index.php"],
+            ["title" => "Alerts", "url" => "alerts.php"],
+        ],
+    ],
+];
+
+$breadcrumbItems = [];
+foreach ($menuItems as $menuItem) {
+    foreach ($menuItem['pages'] as $page) {
+        if ($currentPage === $page['url']) {
+            $breadcrumbItems[] = ["title" => $menuItem['menuTitle'], "url" => "#"];
+            $breadcrumbItems[] = ["title" => $page['title'], "url" => $page['url']];
+            $pageTitle = $page['title'];
+            break;
+        }
+    }
+}
+?>
+
+<div class="main-header" style="padding: 0px 10px; background-color: #f4f6f9; border-bottom: none !important;">
+    <div class="content-header">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark"> <?= $pageTitle ?> </h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <?php foreach ($breadcrumbItems as $item): ?>
+                        <li class="breadcrumb-item <?= $item['url'] === '#' ? 'active' : '' ?>">
+                            <?= $item['url'] === '#' ? $item['title'] : "<a href='{$item['url']}'>{$item['title']}</a>" ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Logo -->
     <a href="./" class="brand-link">
-        <img src="../assets/img/logo.png" alt="Admin Panel Logo" class="brand-image img-circle elevation-3"
-            style="opacity: .8">
+        <img src="./src/images/logo.png" alt="Admin Panel Logo" class="brand-image img-circle elevation-3">
         <span class="brand-text font-weight-light">Admin Panel</span>
     </a>
-
-    <!-- Sidebar -->
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="../assets/img/default.png" class="img-circle elevation-2" alt="User Image">
+                <img src="./src/images/default.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="./" class="d-block">Iqbolshoh Ilhomjonov</a>
             </div>
         </div>
-
-        <!-- Sidebar menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
                 <?php foreach ($menuItems as $menuItem): ?>
-                    <?php
+                    <?php $isMenuOpen = false;
                     $isActive = false;
-                    $isMenuOpen = false;
                     foreach ($menuItem['pages'] as $page) {
                         if ($currentPage === $page['url']) {
                             $isActive = true;
@@ -125,9 +164,7 @@ $count = (new Database())->eQuery("SELECT COUNT(*) AS no_checked_count FROM mess
                             <i class="nav-icon <?= $menuItem['icon'] ?>"></i>
                             <p>
                                 <?= $menuItem['menuTitle'] ?>
-                                <?php if (!empty($menuItem['pages'])): ?>
-                                    <i class="right fas fa-angle-left"></i>
-                                <?php endif; ?>
+                                <?= !empty($menuItem['pages']) ? '<i class="right fas fa-angle-left"></i>' : '' ?>
                             </p>
                         </a>
                         <?php if (!empty($menuItem['pages'])): ?>
@@ -147,42 +184,10 @@ $count = (new Database())->eQuery("SELECT COUNT(*) AS no_checked_count FROM mess
                 <?php endforeach; ?>
             </ul>
         </nav>
-        <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
 </aside>
 
-<?php
-function renderHeader($pageTitle, $breadcrumbItems)
-{
-    ?>
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">
-                        <?= $pageTitle; ?>
-                    </h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <?php foreach ($breadcrumbItems as $item): ?>
-                            <?php if ($item['url'] === '#'): ?>
-                                <li class="breadcrumb-item active"><?= $item['title']; ?></li>
-                            <?php else: ?>
-                                <li class="breadcrumb-item"><a href="<?= $item['url']; ?>"><?= $item['title']; ?></a>
-                                </li>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php
-}
-?>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     function logout() {
         Swal.fire({
