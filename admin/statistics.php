@@ -19,14 +19,6 @@
         <?php include 'includes/header.php' ?>
         <div class="content-wrapper">
 
-            <?php
-            $arr = array(
-                ["title" => "About Us", "url" => "./"],
-                ["title" => "Statistics", "url" => "#"],
-            );
-            renderHeader('About Us', $arr);
-            ?>
-
             <section class="content">
                 <div class="container-fluid">
 
