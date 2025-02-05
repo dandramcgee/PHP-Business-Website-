@@ -6,9 +6,15 @@ $categories = $query->eQuery('SELECT * FROM category');
 // Add Category
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add' && isset($_POST['category_name'])) {
     $category_name = $_POST['category_name'];
-    $query->eQuery('INSERT INTO category (category_name) VALUES (?)', [$category_name]);
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
+
+    $check = $query->eQuery('SELECT COUNT(*) FROM category WHERE category_name = ?', [$category_name]);
+    if ($check[0]['COUNT(*)'] > 0) {
+        echo "<script>alert('Category already exists');</script>";
+    } else {
+        $query->eQuery('INSERT INTO category (category_name) VALUES (?)', [$category_name]);
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    }
 }
 
 // Update Category
@@ -25,6 +31,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     $delete_id = $_POST['delete_id'];
     $query->eQuery('DELETE FROM category WHERE id = ?', [$delete_id]);
     header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}
+
+// Check Category
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'check_category' && isset($_POST['category_name'])) {
+    $category_name = $_POST['category_name'];
+    $check = $query->eQuery('SELECT COUNT(*) FROM category WHERE category_name = ?', [$category_name]);
+    if ($check[0]['COUNT(*)'] > 0) {
+        echo 'exists'; 
+    } else {
+        echo 'not_exists';
+    }
     exit;
 }
 ?>
@@ -46,14 +64,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     <div class="wrapper">
         <?php include 'includes/header.php' ?>
         <div class="content-wrapper">
-
             <section class="content">
                 <div class="container-fluid">
-
                     <div class="row">
                         <!-- Category table -->
                         <div class="col-md-12">
-
                             <!-- Add Category -->
                             <button type="button" class="btn btn-primary mb-3" data-toggle="modal"
                                 data-target="#addCategoryModal" id="addCategoryLabel">
@@ -106,13 +121,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                             </td>
                                             <td>
                                                 <button type="button" class="btn btn-warning" data-toggle="modal"
-                                                    data-target="#editModal<?php echo $category['id']; ?>">
-                                                    Edit
-                                                </button>
+                                                    data-target="#editModal<?php echo $category['id']; ?>">Edit</button>
                                                 <button type="button" class="btn btn-danger"
-                                                    onclick="deleteCategory(<?php echo $category['id']; ?>);">
-                                                    Delete
-                                                </button>
+                                                    onclick="deleteCategory(<?php echo $category['id']; ?>);">Delete</button>
                                             </td>
                                         </tr>
 
@@ -168,6 +179,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     <?php include 'includes/js.php'; ?>
 
     <script>
+        $('form').submit(function (e) {
+            e.preventDefault();
+
+            var categoryName = $('input[name="category_name"]').val(); 
+
+            $.ajax({
+                type: 'POST',
+                url: '',
+                data: {
+                    action: 'check_category',
+                    category_name: categoryName
+                },
+                success: function (response) {
+                    if (response === 'exists') {
+                        Swal.fire("Error!", "This category already exists!", "error");
+                    } else {
+                        $('form')[0].submit();
+                    }
+                },
+                error: function (xhr, status, error) {
+                    Swal.fire("Error!", "There was an error checking the category.", "error");
+                }
+            });
+        });
+
         function deleteCategory(id) {
             Swal.fire({
                 title: "Are you sure?",
