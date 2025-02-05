@@ -44,30 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <!-- Navbar -->
-        <?php include 'includes/navbar.php'; ?>
-        <?php active('Products', 1); ?>
-
-        <div class="main-header">
-
-            <!-- Page path -->
-            <?php
-            $arr = array(
-                ["title" => "Products", "url" => "./"],
-                ["title" => "Categories", "url" => "#"],
-            );
-            pagePath('Categories', $arr);
-            ?>
-
-        </div>
-
-        <!-- Content Wrapper. Contains page content -->
+        <?php include 'includes/header.php' ?>
         <div class="content-wrapper">
-
-            <br>
 
             <section class="content">
                 <div class="container-fluid">
+                    
                     <div class="row">
                         <!-- Category table -->
                         <div class="col-md-12">
