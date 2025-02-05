@@ -55,7 +55,7 @@ $query = new Database();
 
           <?php foreach ($contact_boxData as $contact): ?>
             <div class="col-lg-<?php echo ($contact['id'] == 1) ? '6' : '3'; ?> col-md-6">
-              <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up">
+              <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="100">
                 <i class="<?php echo $contact['icon']; ?>"></i>
                 <h3><?php echo $contact['title']; ?></h3>
                 <p><?php echo $contact['value']; ?></p>
@@ -74,7 +74,7 @@ $query = new Database();
           </div><!-- End of Google Map -->
 
           <div class="col-lg-6">
-            <form action="send_message.php" method="post" class="php-email-form" id="contactForm" data-aos="fade-up">
+            <form action="send_message.php" method="post" class="php-email-form" id="contactForm" data-aos="fade-up" data-aos-delay="100">
               <div class="row gy-4">
                 <div class="col-md-6">
                   <input type="text" name="name" class="form-control" placeholder="Your Name" required=""
