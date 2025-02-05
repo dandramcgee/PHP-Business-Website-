@@ -7,17 +7,9 @@
                     <span class="sitename">Iqbolshoh</span>
                 </a>
                 <div class="footer-contact pt-3">
-                    <p><strong>Location:</strong> <?php echo $contact_boxData[0]['value']; ?></p>
-                    <p class="mt-3"><strong>Phone:</strong> 
-                        <p onclick="window.location.href='tel:<?php echo trim($contact_boxData[2]['value']); ?>'" style="cursor: pointer; color: blue; text-decoration: underline;">
-                            <?php echo $contact_boxData[1]['value']; ?>
-                        </p>
-                    </p>
-                    <p><strong>Email:</strong> 
-                        <p onclick="window.location.href='mailto:<?php echo $contact_boxData[2]['value']; ?>'" style="cursor: pointer; color: blue; text-decoration: underline;">
-                            <?php echo $contact_boxData[2]['value']; ?>
-                        </p>
-                    </p>
+                    <p><strong>Location:</strong> <?php echo  $contact_boxData[0]['value']; ?></p>
+                    <p class="mt-3"><strong>Phone:</strong> <span onclick="window.location.href='tel:<?php echo trim($contact_boxData[2]['value']); ?>'"><?php echo $contact_boxData[1]['value']; ?></span></p>
+                    <p><strong>Email:</strong> <span onclick="window.location.href='mailto:<?php echo $contact_boxData[2]['value']; ?>'"><?php echo  $contact_boxData[2]['value']; ?></span></p>
                 </div>
             </div>
 
