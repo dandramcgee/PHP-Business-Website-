@@ -49,14 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include 'includes/header.php' ?>
     <div class="content-wrapper">
 
-      <?php
-      $arr = array(
-        ["title" => "Home", "url" => "./"],
-        ["title" => "Settings", "url" => "#"],
-      );
-      renderHeader('Settings', $arr);
-      ?>
-
       <section class="content">
         <div class="container-fluid">
 
