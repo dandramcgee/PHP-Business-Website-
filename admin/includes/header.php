@@ -13,6 +13,13 @@ $menuItems = [
         ],
     ],
     [
+        "menuTitle" => "Notifications",
+        "icon" => "fa-solid fa-bell",
+        "pages" => [
+            ["title" => "Messages", "url" => "messages.php"],
+        ],
+    ],
+    [
         "menuTitle" => "Home",
         "icon" => "fa-solid fa-house",
         "pages" => [
