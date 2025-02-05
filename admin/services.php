@@ -16,31 +16,12 @@
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-
-        <!-- Navbar -->
-        <?php include 'includes/navbar.php'; ?>
-        <?php active('Services', 2); ?>
-
-        <div class="main-header">
-
-            <!-- Page Path -->
-            <?php
-            $arr = array(
-                ["title" => "Services", "url" => "./"],
-                ["title" => "Services", "url" => "#"],
-            );
-            pagePath('Services', $arr);
-            ?>
-
-        </div>
-
-        <!-- Content Wrapper. Contains page content -->
+        <?php include 'includes/header.php' ?>
         <div class="content-wrapper">
-
-            <br>
 
             <section class="content">
                 <div class="container-fluid">
+                    
                     <div class="row">
                         <div class="col-12">
                             <table class="table table-bordered">
