@@ -8,7 +8,6 @@ $contact_box = $query->select('contact_box', "*");
 
 // Check if the request method is POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Update Twitter link
     if (isset($_POST['twitter'])) {
         $twitter = $_POST['twitter'];
 
@@ -66,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // Return the POST data as a JSON response
     echo json_encode($_POST);
     exit();
 }
