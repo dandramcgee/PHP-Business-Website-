@@ -45,6 +45,10 @@
         footer .sitename {
             color: var(--accent-color);
         }
+
+        .footer-contact p span:hover {
+            color: var(--accent-color);
+        }
     </style>
 
 </footer>
