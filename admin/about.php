@@ -113,7 +113,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </table>
 
                             <!-- Edit Modal -->
-                            <div class="modal fade" id="editAboutModal" tabindex="-1" role="dialog" aria-labelledby="editAboutModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="editAboutModal" tabindex="-1" role="dialog"
+                                aria-labelledby="editAboutModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -123,25 +124,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form id="editAboutForm" method="POST" action="" enctype="multipart/form-data">
+                                            <form id="editAboutForm" method="POST" action=""
+                                                enctype="multipart/form-data">
                                                 <input type="hidden" name="id" id="editAboutId">
                                                 <div class="form-group">
                                                     <label for="title">Title:</label>
-                                                    <input type="text" name="title" id="editAboutTitle" class="form-control" required maxlength="255">
+                                                    <input type="text" name="title" id="editAboutTitle"
+                                                        class="form-control" required maxlength="255">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="p1">P1:</label>
-                                                    <textarea name="p1" id="editAboutP1" class="form-control" required></textarea>
+                                                    <textarea name="p1" id="editAboutP1" class="form-control"
+                                                        required></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="p2">P2:</label>
-                                                    <textarea name="p2" id="editAboutP2" class="form-control" required></textarea>
+                                                    <textarea name="p2" id="editAboutP2" class="form-control"
+                                                        required></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="image">Image:</label>
-                                                    <input type="file" name="image" class="form-control" accept="image/*">
+                                                    <input type="file" name="image" class="form-control"
+                                                        accept="image/*">
                                                 </div>
-                                                <button type="submit" name="update_about" class="btn btn-primary">Update</button>
+                                                <button type="submit" name="update_about"
+                                                    class="btn btn-primary">Update</button>
                                             </form>
                                         </div>
                                     </div>
@@ -186,7 +193,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </table>
 
                             <!-- Edit UL Item Modal -->
-                            <div class="modal fade" id="editUlItemModal" tabindex="-1" role="dialog" aria-labelledby="editUlItemModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="editUlItemModal" tabindex="-1" role="dialog"
+                                aria-labelledby="editUlItemModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -200,9 +208,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                 <input type="hidden" name="ul_item_id" id="editUlItemId">
                                                 <div class="form-group">
                                                     <label for="list_item">List Item:</label>
-                                                    <textarea name="list_item" id="editUlItemList" class="form-control" required></textarea>
+                                                    <textarea name="list_item" id="editUlItemList" class="form-control"
+                                                        required></textarea>
                                                 </div>
-                                                <button type="submit" name="update_ul_items" class="btn btn-primary">Update</button>
+                                                <button type="submit" name="update_ul_items"
+                                                    class="btn btn-primary">Update</button>
                                             </form>
                                         </div>
                                     </div>
@@ -226,7 +236,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // For the 'About' edit modal
-        $('#editAboutModal').on('show.bs.modal', function(event) {
+        $('#editAboutModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget); // Button that triggered the modal
             var id = button.data('id');
 
@@ -243,7 +253,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         });
 
         // For the 'UL Item' edit modal
-        $('#editUlItemModal').on('show.bs.modal', function(event) {
+        $('#editUlItemModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget); // Button that triggered the modal
             var id = button.data('id');
             var list_item = button.closest('tr').find('td:eq(1)').text();

@@ -40,17 +40,9 @@ if (isset($_GET['edit'])) {
         <?php include 'includes/header.php' ?>
         <div class="content-wrapper">
 
-            <?php
-            $arr = array(
-                ["title" => "Home", "url" => "./"],
-                ["title" => "Features", "url" => "#"],
-            );
-            renderHeader('Features', $arr);
-            ?>
-
             <section class="content">
                 <div class="container-fluid">
-                    
+
                     <div class="row">
                         <div class="col-12">
                             <table class="table table-bordered">
@@ -87,7 +79,8 @@ if (isset($_GET['edit'])) {
             </section>
 
             <!-- Modal -->
-            <div class="modal fade" id="editFeatureModal" tabindex="-1" role="dialog" aria-labelledby="editFeatureModalLabel" aria-hidden="true">
+            <div class="modal fade" id="editFeatureModal" tabindex="-1" role="dialog"
+                aria-labelledby="editFeatureModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -101,11 +94,13 @@ if (isset($_GET['edit'])) {
                                 <input type="hidden" name="id" id="editId" value="">
                                 <div class="form-group">
                                     <label for="title">Title:</label>
-                                    <input type="text" name="title" id="editTitle" class="form-control" maxlength="255" required>
+                                    <input type="text" name="title" id="editTitle" class="form-control" maxlength="255"
+                                        required>
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description:</label>
-                                    <textarea name="description" id="editDescription" class="form-control" required></textarea>
+                                    <textarea name="description" id="editDescription" class="form-control"
+                                        required></textarea>
                                 </div>
                                 <button type="submit" name="update" class="btn btn-primary">Update</button>
                             </form>
@@ -125,8 +120,8 @@ if (isset($_GET['edit'])) {
 
     <script>
         // Open modal when the edit button is clicked
-        $(document).ready(function() {
-            $('.btn-warning').click(function(e) {
+        $(document).ready(function () {
+            $('.btn-warning').click(function (e) {
                 e.preventDefault();
 
                 // Fill the modal
