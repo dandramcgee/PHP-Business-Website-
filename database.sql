@@ -230,7 +230,7 @@ VALUES
         'iqbolshoh_777',
         '',
         'iqbolshoh_777',
-        'iqbolshoh'
+        'iiqbolshoh'
     );
 
 INSERT INTO
