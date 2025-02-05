@@ -103,7 +103,7 @@ if ($product) {
                 <ul>
                   <li><strong>Category</strong>: <?php echo $category; ?></li>
                   <li><strong>Product Name</strong>: <?php echo $product['product_name']; ?></li>
-                  <li><strong>Price</strong>: <?php echo $product['price']; ?></li>
+                  <li><strong>Price</strong>: <?php echo number_format($product['price'], 0, '', ' '); ?></li>
                 </ul>
               </div>
               <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
