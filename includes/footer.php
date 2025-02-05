@@ -12,7 +12,7 @@
                     <p><strong>Email:</strong> <span><a href="mailto:<?php echo  $contact_boxData[2]['value']; ?>"><?php echo  $contact_boxData[2]['value']; ?></a></span></p>
                 </div>
             </div>
-            
+
             <div class="col-lg-4 col-md-6 col-sm-12 footer-links mb-4">
                 <h4>Useful Links</h4>
                 <ul>
