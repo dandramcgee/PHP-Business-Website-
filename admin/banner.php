@@ -79,28 +79,20 @@ if (isset($_GET['delete'])) {
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
+        <?php include 'includes/header.php' ?>
+        <div class="content-wrapper">
 
-        <!-- Navbar -->
-        <?php include 'includes/navbar.php'; ?>
-        <?php active('HomePage', 1); ?>
-
-        <div class="main-header">
-            <!-- Page path -->
             <?php
             $arr = array(
                 ["title" => "Home", "url" => "./"],
                 ["title" => "Banner", "url" => "#"],
             );
-            pagePath('Home', $arr);
+            renderHeader('Banner', $arr);
             ?>
-        </div>
 
-        <!-- Content Wrapper -->
-        <div class="content-wrapper">
             <section class="content">
                 <div class="container-fluid">
 
-                    <br>
                     <!-- Button to add banners -->
                     <button type="button" class="btn btn-primary mb-3" data-toggle="modal"
                         data-target="#addBannerModal">
