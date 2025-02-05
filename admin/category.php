@@ -49,18 +49,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
             <section class="content">
                 <div class="container-fluid">
-                    
+
                     <div class="row">
                         <!-- Category table -->
                         <div class="col-md-12">
 
                             <!-- Add Category -->
-                            <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#addCategoryModal" id="addCategoryLabel">
+                            <button type="button" class="btn btn-primary mb-3" data-toggle="modal"
+                                data-target="#addCategoryModal" id="addCategoryLabel">
                                 Add Category
                             </button>
 
                             <!-- Add Category modal -->
-                            <div class="modal fade" id="addCategoryModal" tabindex="-1" role="dialog" aria-labelledby="addCategoryLabel" aria-hidden="true">
+                            <div class="modal fade" id="addCategoryModal" tabindex="-1" role="dialog"
+                                aria-labelledby="addCategoryLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -73,12 +75,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                             <div class="modal-body">
                                                 <div class="form-group">
                                                     <label for="category_name">Category Name</label>
-                                                    <input type="text" class="form-control" name="category_name" maxlength="255" required>
+                                                    <input type="text" class="form-control" name="category_name"
+                                                        maxlength="255" required>
                                                     <input type="hidden" name="action" value="add">
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
                                                 <button type="submit" class="btn btn-primary">Add</button>
                                             </div>
                                         </form>
@@ -98,24 +102,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                     <?php foreach ($categories as $index => $category): ?>
                                         <tr>
                                             <td><?php echo $index + 1; ?></td>
-                                            <td><?php echo htmlspecialchars($category['category_name'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                            <td><?php echo htmlspecialchars($category['category_name'], ENT_QUOTES, 'UTF-8'); ?>
+                                            </td>
                                             <td>
-                                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal<?php echo $category['id']; ?>">
+                                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                                    data-target="#editModal<?php echo $category['id']; ?>">
                                                     Edit
                                                 </button>
-                                                <button type="button" class="btn btn-danger" onclick="deleteCategory(<?php echo $category['id']; ?>);">
+                                                <button type="button" class="btn btn-danger"
+                                                    onclick="deleteCategory(<?php echo $category['id']; ?>);">
                                                     Delete
                                                 </button>
                                             </td>
                                         </tr>
 
                                         <!-- Edit modal -->
-                                        <div class="modal fade" id="editModal<?php echo $category['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="editLabel<?php echo $category['id']; ?>" aria-hidden="true">
+                                        <div class="modal fade" id="editModal<?php echo $category['id']; ?>" tabindex="-1"
+                                            role="dialog" aria-labelledby="editLabel<?php echo $category['id']; ?>"
+                                            aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="editLabel<?php echo $category['id']; ?>">Edit Category</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <h5 class="modal-title"
+                                                            id="editLabel<?php echo $category['id']; ?>">Edit Category</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
@@ -123,13 +134,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                                         <div class="modal-body">
                                                             <div class="form-group">
                                                                 <label for="category_name">Category Name</label>
-                                                                <input type="text" class="form-control" name="category_name" value="<?php echo htmlspecialchars($category['category_name'], ENT_QUOTES, 'UTF-8'); ?>" maxlength="255" required>
+                                                                <input type="text" class="form-control" name="category_name"
+                                                                    value="<?php echo htmlspecialchars($category['category_name'], ENT_QUOTES, 'UTF-8'); ?>"
+                                                                    maxlength="255" required>
                                                                 <input type="hidden" name="action" value="edit">
-                                                                <input type="hidden" name="id" value="<?php echo $category['id']; ?>">
+                                                                <input type="hidden" name="id"
+                                                                    value="<?php echo $category['id']; ?>">
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Close</button>
                                                             <button type="submit" class="btn btn-warning">Update</button>
                                                         </div>
                                                     </form>
@@ -171,12 +186,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                             action: 'delete',
                             delete_id: id
                         },
-                        success: function(response) {
+                        success: function (response) {
                             Swal.fire("Deleted!", "Category deleted successfully!", "success").then(() => {
                                 location.reload();
                             });
                         },
-                        error: function(xhr, status, error) {
+                        error: function (xhr, status, error) {
                             Swal.fire("Error!", "There was an error deleting the category.", "error");
                         }
                     });
