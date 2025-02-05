@@ -61,7 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 <div class="container-fluid">
 
                     <div class="row">
-                        <!-- Category table -->
                         <div class="col-md-12">
                             <!-- Add Category Button -->
                             <button type="button" class="btn btn-primary mb-3" data-toggle="modal"
