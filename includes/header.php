@@ -13,7 +13,7 @@
                 <a href="https://twitter.com/<?php echo  $contactData[0]['twitter']; ?>" class="twitter"><i class="bi bi-twitter-x"></i></a>
                 <a href="https://facebook.com/<?php echo  $contactData[0]['facebook']; ?>" class="facebook"><i class="bi bi-facebook"></i></a>
                 <a href="https://instagram.com/<?php echo  $contactData[0]['instagram']; ?>" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="https://linkedin.com/<?php echo  $contactData[0]['linkedin']; ?>" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                <a href="https://linkedin.com/in/<?php echo  $contactData[0]['linkedin']; ?>" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
         </div>
     </div>
