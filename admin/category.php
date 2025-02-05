@@ -110,6 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                     <tr>
                                         <th>№</th>
                                         <th>Categories</th>
+                                        <th>Product number</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -119,6 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                             <td><?php echo $index + 1; ?></td>
                                             <td><?php echo htmlspecialchars($category['category_name'], ENT_QUOTES, 'UTF-8'); ?>
                                             </td>
+                                            <td></td>
                                             <td>
                                                 <button type="button" class="btn btn-warning" data-toggle="modal"
                                                     data-target="#editModal<?php echo $category['id']; ?>">Edit</button>
