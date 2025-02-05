@@ -50,14 +50,7 @@ $menuItems = [
         "pages" => [
             ["title" => "Contact Information", "url" => "contact.php"],
         ],
-    ],
-    [
-        "menuTitle" => "Notifications",
-        "icon" => "fa-solid fa-bell",
-        "pages" => [
-            ["title" => "Messages", "url" => "messages.php"],
-        ],
-    ],
+    ]
 ];
 
 $breadcrumbItems = [];
