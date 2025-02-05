@@ -69,7 +69,7 @@ if (isset($_GET['edit'])) {
                                             <a href='#' class='btn btn-warning' data-id='{$feature['id']}' data-title='" . htmlspecialchars($feature['title'], ENT_QUOTES, 'UTF-8') . "' data-description='" . htmlspecialchars($feature["description"], ENT_QUOTES, 'UTF-8') . "' data-icon='{$feature['icon']}'>Edit</a>
                                         </td>";
                                         echo "</tr>";
-                                    }                                    
+                                    }
                                     ?>
                                 </tbody>
                             </table>
