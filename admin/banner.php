@@ -82,14 +82,6 @@ if (isset($_GET['delete'])) {
         <?php include 'includes/header.php' ?>
         <div class="content-wrapper">
 
-            <?php
-            $arr = array(
-                ["title" => "Home", "url" => "./"],
-                ["title" => "Banner", "url" => "#"],
-            );
-            renderHeader('Banner', $arr);
-            ?>
-
             <section class="content">
                 <div class="container-fluid">
 
