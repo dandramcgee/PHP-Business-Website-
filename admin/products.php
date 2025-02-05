@@ -28,33 +28,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     $product_name = $_POST['product_name'];
     $price = $_POST['price'];
     $description = $_POST['description'];
-    $category_id = $_POST['category_id']; // Retrieve Category ID
+    $category_id = $_POST['category_id'];
 
     // Image upload process
     $uploadedImages = [];
     $totalFiles = count($_FILES['image']['name']);
-    if ($totalFiles <= 10) { // Limit to 10 images for upload
+    if ($totalFiles <= 10) { 
         for ($i = 0; $i < $totalFiles; $i++) {
             if ($_FILES['image']['error'][$i] == 0) {
                 $image_name = basename($_FILES['image']['name'][$i]);
-                $encrypted_name = md5(time() . $image_name) . "." . pathinfo($image_name, PATHINFO_EXTENSION); // Encrypt the name with time
+                $encrypted_name = md5(time() . $image_name) . "." . pathinfo($image_name, PATHINFO_EXTENSION);
                 $target_dir = "../assets/img/product/";
                 $target_file = $target_dir . $encrypted_name;
 
                 if (move_uploaded_file($_FILES['image']['tmp_name'][$i], $target_file)) {
-                    $uploadedImages[] = $encrypted_name; // Add saved image names
+                    $uploadedImages[] = $encrypted_name; 
                 }
             }
         }
 
         if (!empty($uploadedImages)) {
-            // Add product information
             $query->eQuery('INSERT INTO products (product_name, description, price, category_id) VALUES (?, ?, ?, ?)', [$product_name, $description, $price, $category_id]);
 
-            // Retrieve the last inserted product ID
             $product_id = $query->lastInsertId();
 
-            // Insert product image information
             foreach ($uploadedImages as $uploadedImage) {
                 $query->eQuery('INSERT INTO product_images (product_id, image_url) VALUES (?, ?)', [$product_id, $uploadedImage]);
             }
