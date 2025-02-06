@@ -18,13 +18,13 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['session_token'])) {
     }
 
     $username = $_COOKIE['username'];
-    $result = $query->select('users', 'id', "username = $username");
+    $result = $query->select('users', '*', "WHERE username = '$username'");
 
     if (!empty($result)) {
         $user = $result[0];
 
         $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $_COOKIE['username'];
+        $_SESSION['username'] = $username;
         $_SESSION['user_id'] = $user['id'];
 
         header("Location: ../");
