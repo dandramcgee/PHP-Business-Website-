@@ -33,7 +33,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['session_token'])) {
 }
 
 if (isset($_POST['submit'])) {
-    $input_username = $query->validate(strtolower($_POST['username']));
+    $input_username = strtolower($_POST['username']);
     $input_password = $_POST['password'];
 
     $user = $query->login($input_username, $input_password, 'users');
