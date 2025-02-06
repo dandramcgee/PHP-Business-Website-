@@ -42,6 +42,9 @@ if (isset($_POST['submit'])) {
         $_SESSION['loggedin'] = true;
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
+
+        setcookie('username', $username, time() + (86400 * 30), "/", "", true, true);
+        setcookie('session_token', session_id(), time() + (86400 * 30), "/", "", true, true);
         ?>
 
         <script>
