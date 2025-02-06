@@ -9,6 +9,28 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 include '../config.php';
 $query = new Database();
 
+if (isset($_COOKIE['username']) && isset($_COOKIE['session_token'])) {
+
+    if (session_id() !== $_COOKIE['session_token']) {
+        session_write_close();
+        session_id($_COOKIE['session_token']);
+        session_start();
+    }
+
+    $result = $query->select('users', 'id', "username = ?", [$_COOKIE['username']], 's');
+
+    if (!empty($result)) {
+        $user = $result[0];
+
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $_COOKIE['username'];
+        $_SESSION['user_id'] = $user['id'];
+
+        header("Location: ../");
+        exit;
+    }
+}
+
 if (isset($_POST['submit'])) {
     $input_username = $query->validate($_POST['username']);
     $input_password = $_POST['password'];
