@@ -17,7 +17,8 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['session_token'])) {
         session_start();
     }
 
-    $result = $query->select('users', 'id', "username = ?", [$_COOKIE['username']], 's');
+    $username = $_COOKIE['username'];
+    $result = $query->select('users', 'id', "username = $username");
 
     if (!empty($result)) {
         $user = $result[0];
@@ -41,10 +42,10 @@ if (isset($_POST['submit'])) {
         $_SESSION['loggedin'] = true;
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
-?>
+        ?>
 
         <script>
-            window.onload = function() {
+            window.onload = function () {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
@@ -57,12 +58,12 @@ if (isset($_POST['submit'])) {
             };
         </script>
 
-    <?php
+        <?php
     } else {
-    ?>
+        ?>
 
         <script>
-            window.onload = function() {
+            window.onload = function () {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'error',
@@ -73,7 +74,7 @@ if (isset($_POST['submit'])) {
             };
         </script>
 
-<?php
+        <?php
     }
 }
 ?>
@@ -107,7 +108,8 @@ if (isset($_POST['submit'])) {
                 <label for="password">Password</label>
                 <div class="password-container">
                     <input type="password" id="password" name="password" required maxlength="255">
-                    <button type="button" id="toggle-password" class="password-toggle"><i class="fas fa-eye"></i></button>
+                    <button type="button" id="toggle-password" class="password-toggle"><i
+                            class="fas fa-eye"></i></button>
                 </div>
             </div>
             <div class="form-group">
@@ -118,8 +120,8 @@ if (isset($_POST['submit'])) {
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('toggle-password').addEventListener('click', function() {
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('toggle-password').addEventListener('click', function () {
                 const passwordField = document.getElementById('password');
                 const toggleIcon = this.querySelector('i');
 
