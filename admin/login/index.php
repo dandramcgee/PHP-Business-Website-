@@ -6,7 +6,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     exit;
 }
 
-include '../config.php';
+include '../../config.php';
 $query = new Database();
 
 if (isset($_COOKIE['username']) && isset($_COOKIE['session_token'])) {
