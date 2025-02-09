@@ -35,11 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete' && isset($_POST['delete_id'])) {
     $delete_id = $_POST['delete_id'];
 
-    $projectIds = $query->select('products', 'id', "WHERE category_id = $delete_id");
+    $productIds = $query->select('products', 'id', "WHERE category_id = $delete_id");
 
-    foreach ($projectIds as $project) {
-        $projectId = $project['id'];
-        $imagesUrl = $query->select('project_images', '*', "WHERE project_id = $projectId");
+    foreach ($productIds as $product) {
+        $productId = $product['id'];
+        $imagesUrl = $query->select('product_images', '*', "WHERE product_id = $productId");
         foreach ($imagesUrl as $image) {
             $imageUrl = "../assets/img/product/" . $image['image_url'];
             if (file_exists($imageUrl)) {
