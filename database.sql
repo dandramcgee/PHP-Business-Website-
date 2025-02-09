@@ -1,4 +1,4 @@
-CREATE DATABASE bussiness_website;
+CREATE DATABASE business_website;
 
 USE bussiness_website;
 
