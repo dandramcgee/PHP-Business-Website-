@@ -34,6 +34,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 // Delete Category
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete' && isset($_POST['delete_id'])) {
     $delete_id = $_POST['delete_id'];
+
+    $productIds = $query->select('products', 'id', "WHERE category_id = $delete_id");
+
+    foreach ($productIds as $product) {
+        $productId = $product['id'];
+        $imagesUrl = $query->select('product_images', '*', "WHERE product_id = $productId");
+        foreach ($imagesUrl as $image) {
+            $imageUrl = "../assets/img/product/" . $image['image_url'];
+            if (file_exists($imageUrl)) {
+                unlink($imageUrl);
+            }
+        }
+    }
     $query->eQuery('DELETE FROM category WHERE id = ?', [$delete_id]);
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
