@@ -126,8 +126,8 @@ INSERT INTO
     users (name, username, password)
 VALUES
     (
-        'Admin',
-        'admin',
+        'Iqbolshoh',
+        'Iqbolshoh',
         '52be5ff91284c65bac56f280df55f797a5c505f7ef66317ff358e34791507027'
     );
 
