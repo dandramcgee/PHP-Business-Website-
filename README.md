@@ -18,7 +18,6 @@ The admin panel is user-friendly and allows you to manage all aspects of your we
 ![Admin Panel](https://github.com/Iqbolshoh/php-business-website/blob/main/assets/img/admin-panel-1.png)
 
 - **🖥 Admin Login:** `iqbolshoh`  
-- **👤 User Login:** `user`  
 - **🔑 Password:** `IQBOLSHOH`  
 
 ### Admin Panel Features:
