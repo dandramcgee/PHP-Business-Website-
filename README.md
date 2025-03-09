@@ -17,8 +17,6 @@ The `php-business-website` is a **modern business website template** built using
 The **admin panel** is user-friendly and designed for users **without coding experience**. You can **update text, images, and manage your portfolio** effortlessly.  
 
 ![🛠️ Admin Panel](https://github.com/Iqbolshoh/php-business-website/blob/main/assets/img/admin-panel-1.png)  
-
-### 🏢 **Admin Credentials:**  
 🖥 **Admin Login:** `iqbolshoh`  
 🔑 **Password:** `IQBOLSHOH`  
 
