@@ -20,7 +20,8 @@ The **admin panel** is user-friendly and designed for users **without coding exp
 🖥 **Admin Login:** `iqbolshoh`  
 🔑 **Password:** `IQBOLSHOH`  
 
-### ⚙️ **Admin Panel Features:**  
+### ⚙️ **Admin Panel Features:** 
+
 ✅ **📄 Content Management** – Easily update text, images, and other elements.  
 ✅ **🖼️ Portfolio Management** – Add/remove services and products.  
 ✅ **👥 User Management** – Manage user accounts and access levels.  
