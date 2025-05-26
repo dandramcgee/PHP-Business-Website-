@@ -53,6 +53,7 @@ cd php-business-website
 - Host it on a server that supports **PHP** (Apache or Nginx).  
 - Open **`http://localhost/php-business-website`** in your browser.  
 
+
 ## 🖥 Technologies Used
 ![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -61,8 +62,6 @@ cd php-business-website
 ![jQuery](https://img.shields.io/badge/jQuery-%230e76a8.svg?style=for-the-badge&logo=jquery&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-%234479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
-
----
 
 ## 📜 License
 This project is open-source and available under the **MIT License**.
@@ -107,7 +106,7 @@ This project is open-source and available under the **MIT License**.
         </a>
       </td>
       <td>
-        <a href="https://wa.me/qr/22PVFQSMQQX4F1" target="_blank">
+        <a href="https://wa.me/998997799333" target="_blank">
           <img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/whatsapp.svg"
                height="40" width="40" alt="WhatsApp" title="WhatsApp" />
         </a>
