@@ -4,7 +4,7 @@ The `php-business-website` is a **modern business website template** built using
 
 ![🌍 Business Website](https://github.com/Iqbolshoh/php-business-website/blob/main/assets/img/banner-1.png)  
 
-## ✨ Project Characteristics  
+## ✨ Project Characteristics 
 
 🔹 **🌍 Multi-Purpose:** Suitable for **services, product sales, marketing**, and more.  
 🔹 **📱 Fully Responsive:** Works perfectly on **mobile and desktop** devices.  
